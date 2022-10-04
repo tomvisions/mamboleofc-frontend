@@ -1,7 +1,7 @@
 name: MamboleoFC Frontend Build Test
 run-name: ${{ github.actor }} is preforming a build test
-on: [push]
-  pull_request:
+on:
+  push:
     branches-ignore:
       - main
 jobs:
