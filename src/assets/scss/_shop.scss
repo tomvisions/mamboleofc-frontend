@@ -1,0 +1,178 @@
+/*----------------------------------------*/
+/*  15.  Shop Page Area
+/*----------------------------------------*/
+.shop-page-area {}
+/*-- Shop Top Bar --*/
+.shop-top-bar {
+    /*-- Shop View Mood --*/
+    .view-mode{
+        .nav-item{
+            margin-right: 10px;
+        }
+
+        .nav-link{
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: $color-white;
+            border: 1px solid #e7e7e7;
+            font-size: 20px;
+            color: #252525;
+            &.active{
+                background: $theme-color;
+                border-color: $theme-color;
+                color: $color-white;
+            }
+
+            
+        }
+    }
+}
+/* Shop Product Short By */
+.pro-short-by {
+    display: inline-block;
+    vertical-align: top;
+    @media #{$large-mobile}{
+        display: none;
+    }
+    & p {
+        color: #252525;
+        display: block;
+        float: left;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 35px;
+        margin: 0 18px 0 0;
+        text-transform: uppercase;
+    }
+    & select {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+              appearance: none;
+        background: rgba(0, 0, 0, 0) url("../img/select-arrow-down.png") no-repeat scroll right top;
+        border: 1px solid #e7e7e7;
+        display: block;
+        float: left;
+        height: 35px;
+        padding: 0 12px;
+        &  option {
+            padding: 3px 15px;
+        }
+    }
+}
+/* Shop Product Showing */
+.shop-bottom-bar {
+    & .pro-showing {
+        @media #{$large-mobile}{
+            display: none;
+        }
+    }
+}
+.pro-showing {
+  display: inline-block;
+  vertical-align: top;
+    & p {
+        color: #252525;
+        display: block;
+        float: left;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 35px;
+        margin: 0 18px 0 0;
+        text-transform: uppercase;
+    }
+    & select {
+        -moz-appearance: none;
+        -webkit-appearance: none;
+              appearance: none;
+        background: rgba(0, 0, 0, 0) url("../img/select-arrow-down.png") no-repeat scroll right top;
+        border: 1px solid #e7e7e7;
+        display: block;
+        float: left;
+        height: 35px;
+        padding: 0 36px 0 12px;
+        &  option {
+            padding: 3px 15px;
+        }
+    }
+}
+/*-- Shop Sidebar --*/
+.single-shop-sidebar {
+    & h4 {
+        font-size: 18px;
+        text-transform: uppercase;
+        line-height: 14px;
+        font-weight: 600;
+        margin-bottom: 20px;
+        position: relative;
+        padding-bottom: 10px;
+        &::before {
+            width: 40px;
+            height: 2px;
+            background-color: $theme-color;
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+    }
+}
+/*-- Category Sidebar --*/
+.category-sidebar {
+    & li {
+        border-bottom: 1px solid #eee;
+        & a {
+            text-transform: capitalize;
+            font-size: 14px;
+            color: $text-color;
+            line-height: 24px;
+            padding: 6px 0 5px;
+            &:hover {
+                color: $theme-color;
+            }
+        }
+    }
+}
+/*-- Size Sidebar --*/
+.size-sidebar {
+    overflow: hidden;
+    & li {
+        float: left;
+        margin-right: 5px;
+        margin-bottom: 5px;
+        & a {
+            border: 1px solid #eee;
+            text-transform: uppercase;
+            font-size: 14px;
+            color: $text-color;
+            line-height: 24px;
+            padding: 8px 0 5px;
+            height: 40px;
+            text-align: center;
+            display: block;
+            width: 40px;
+            &:hover {
+                color: $theme-color;
+                border-color: $theme-color;
+            }
+        }
+    }
+}
+/*-- Color Sidebar --*/
+.color-sidebar {
+    & li {
+        border-bottom: 1px solid #eee;
+        & a {
+            text-transform: capitalize;
+            font-size: 14px;
+            color: $text-color;
+            line-height: 24px;
+            padding: 6px 0 5px;
+            &:hover {
+                color: $theme-color;
+            }
+        }
+    }
+}

@@ -1,0 +1,48 @@
+/*----------------------------------------*/
+/*  20.  Testimonial Area
+/*----------------------------------------*/
+.testimonial-area {
+    & .row-45 {
+        margin-left: -45px;
+        margin-right: -45px;
+    }
+}
+/*-- Testimonial Slider --*/
+.testimonial-slider {
+    & .slick-list {
+        padding: 0 15px 15px;
+    }
+}
+/*-- Single Testimonial --*/
+.single-testimonial {
+    padding: 44px 65px;
+    position: relative;
+    background-color: $color-white;
+    box-shadow: 0 0 15px rgba(#000, 0.1);
+    margin: 44px 30px 0;
+    @media #{$small-mobile}{
+        padding: 44px 15px 30px;;
+    }
+    & img {
+        position: absolute;
+        width: 92px;
+        height: 88px;
+        border: 1px solid #e6e6e6;
+        margin-left: -46px;
+        left: 50%;
+        top: -44px;
+    }
+    & h4 {
+        font-size: 18px;
+        line-height: 26px;
+        color: #525252;
+        text-transform: uppercase;
+        margin-top: 20px;
+        margin-bottom: 16px;
+    }
+    & p {
+        color: #7a7a7a;
+        line-height: 26px;
+        font-size: 16px;
+    }
+}

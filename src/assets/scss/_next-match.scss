@@ -1,0 +1,187 @@
+/*----------------------------------------*/
+/*  6.  Next Match Area
+/*----------------------------------------*/
+.next-match-area {
+    background-image: url(../img/next-match/bg.jpg);
+    &::before {
+        opacity: 0.85;
+    }
+}
+/*-- Upcoming Match --*/
+.upcoming-match {
+    & .teams {
+        position: relative;
+        & .vs {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background-color: $theme-color;
+            color: $color-white;
+            width: 50px;
+            height: 50px;
+            border: 2px solid $color-white;
+            margin-left: -25px;
+            margin-top: -25px;
+            border-radius: 50%;
+            font-size: 22px;
+            font-family: $montserrat;
+            font-weight: bold;
+            line-height: 44px;
+            z-index: 99;
+        }
+    }
+}
+/*-- Upcoming Match Teams --*/
+.nms-team {
+    display: inline-block;
+    &:first-child {
+        @media #{$small-mobile}{
+            background-color: $color-white;
+        }
+        & .image {
+            background-color: $color-white;
+        }
+        & h4 {
+            background-color: $color-white;
+            margin-right: -3px;
+            margin-left: -11px;
+            text-align: left;
+            padding-left: 34px;
+            @media #{$small-mobile}{
+                margin: 0;
+                text-align: center;
+                padding-left: 15px;
+                padding-bottom: 35px;
+            }
+            &::before {
+                border-left: 40px solid $color-white;
+                border-bottom: 74px solid transparent;
+                content: "";
+                right: -20px;
+                position: absolute;
+                top: 0;
+                z-index: 3;
+                @media #{$small-mobile}{
+                    display: none;
+                }
+            }
+        }
+    }
+    &:last-child {
+        @media #{$small-mobile}{
+            background-color: $theme-color;
+        }
+        & .image {
+            background-color: $theme-color;
+            @media #{$small-mobile}{
+                margin-top: 4px;
+            }
+        }
+        & h4 {
+            background-color: $theme-color;
+            margin-left: -3px;
+            margin-right: -11px;
+            text-align: right;
+            padding-right: 34px;
+            @media #{$small-mobile}{
+                margin: 0;
+                text-align: center;
+                padding-right: 15px;
+                padding-top: 35px;
+            }
+            &::before {
+                border-right: 40px solid $theme-color;
+                border-top: 74px solid transparent;
+                content: "";
+                left: -20px;
+                position: absolute;
+                top: 0;
+                z-index: 3;
+                @media #{$small-mobile}{
+                    display: none;
+                }
+            }
+        }
+    }
+    & .image {
+        width: 138px;
+        height: 138px;
+        padding: 27px;
+        border-radius: 50%;
+        @media #{$small-mobile}{
+            float: left;
+            height: 80px;
+            margin: 0 auto;
+            padding: 13px;
+            width: 80px;
+        }
+        & img {
+            @media #{$small-mobile}{
+                width: 100%;
+            }
+        }
+    }
+    & h4 {
+        display: inline-block;
+        margin: 32px 0 0;
+        width: 180px;
+        height: 74px;
+        line-height: 24px;
+        color: #535353;
+        font-weight: 800;
+        text-transform: uppercase;
+        padding: 25px 15px;
+        position: relative;
+        @media #{$small-mobile}{
+            height: auto;
+        }
+    }
+}
+/*-- Upcoming Match Time & Venue --*/
+.match-time-venue {
+    margin-bottom: 43px;
+    @media #{$large-mobile}{
+        margin-top: 30px;
+    }
+    & span {
+        font-family: $montserrat;
+        font-weight: 500;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: $color-white;
+        display: block;
+        line-height: 10px;
+        margin-bottom: 6px;
+    }
+    & h4 {
+        font-size: 18px;
+        font-weight: normal;
+        color: $color-white;
+        margin-bottom: 0;
+    }
+}
+/*-- Upcoming Match Countdown --*/
+.next-match-countdown {
+    & .cdown {
+        color: $color-white;
+        font-size: 16px;
+        font-family: $montserrat;
+        font-weight: normal;
+        display: inline-block;
+        height: 45px;
+        width:  156px;
+        background-color: rgba(#646464, 0.5);
+        line-height: 25px;
+        padding: 10px 15px;
+        margin: 0 11px 10px;
+        text-transform: uppercase;
+        @media #{$large-mobile}{
+            width: 120px;
+            font-size: 12px;
+            margin: 0 5px 10px;
+        }
+        & span {
+            margin-right: 5px;
+        }
+    }
+}

@@ -1,0 +1,203 @@
+/*----------------------------------------*/
+/*  9.  Product Area
+/*----------------------------------------*/
+.product-slider {
+    & .product-item {
+        margin: 11px 0 20px;
+    }
+}
+/*-- Grid Product Item --*/
+.product-item {
+    box-shadow: 0 1px 5px rgba(#221e1f, 0.1);
+    @include transition(all 0.4s ease 0s);
+    &:hover {
+        box-shadow: 0 4px 15px rgba(#221e1f, 0.1);
+    }
+    /*-- Grid Product Image --*/
+    & .image {
+        display: block;
+        & img {
+            width: 100%;
+        }
+    }
+    /*-- Grid Product Content --*/
+    & .content {
+        padding: 23px;
+        & .title {
+            font-size: 18px;
+            font-weight: 600;
+            text-transform: capitalize;
+            margin-bottom: 3px;
+            & a {
+                color: #5c5c5c;
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+        }
+        & .cat {
+            font-size: 14px;
+            font-weight: normal;
+            color: #696969;
+            margin-bottom: 19px;
+        }
+        & .price-ratting {
+            margin-bottom: 25px;
+            & .price {
+                font-weight: 600;
+                font-size: 24px;
+                color: #505050;
+                line-height: 24px;
+                margin-bottom: 0;
+                & span {
+                    font-size: 16px;
+                    line-height: 24px;
+                    float: left;
+                    margin-right: 2px;
+                }
+            }
+            & .ratting {
+                & i {
+                    color: $theme-color;
+                    font-size: 14px;
+                    float: left;
+                    margin-left: 5px;
+                    line-height: 24px;
+                }
+            }
+        }
+        /*-- Grid Product Action --*/
+        & .action-btn {
+            & a {
+                height: 27px;
+                min-width: 27px;
+                line-height: 28px;
+                text-align: center;
+                color: $color-white;
+                float: left;
+                font-weight: normal;
+                font-size: 11px;
+                text-transform: uppercase;
+                font-family: $montserrat;
+                margin-right: 8px;
+                & i {
+                    line-height: 28px;
+                    display: block;
+                    font-size: 16px;
+                }
+                &.add-cart {
+                    padding: 0 14px;
+                    background-color: #505050;
+                    &:hover {
+                        background-color: $theme-color;
+                    }
+                }
+                &.wishlist {
+                    background-color: $theme-color;
+                    width: 27px;
+                    &:hover {
+                        background-color: #505050;
+                    }
+                }
+            }
+        }
+    }
+}
+/*-- List Product Item --*/
+.list-product-item {
+    box-shadow: 0 1px 5px rgba(#221e1f, 0.1);
+    @include transition(all 0.4s ease 0s);
+    float: left;
+    &:hover {
+        box-shadow: 0 4px 15px rgba(#221e1f, 0.1);
+    }
+    & .image {
+        display: block;
+        margin-top: 10px;
+        & a {
+            width: 100%;
+            & img {
+                width: 100%;
+            }
+        }
+    }
+}
+/*-- List Product Content --*/
+.list-product-content {
+    padding: 30px;
+    & .title {
+        font-size: 18px;
+        font-weight: 600;
+        text-transform: capitalize;
+        margin-bottom: 10px;
+        & a {
+            color: #5c5c5c;
+            &:hover {
+                color: $theme-color;
+            }
+        }
+    }
+    & .price-ratting {
+        margin-bottom: 15px;
+        & .price {
+            font-weight: 600;
+            font-size: 24px;
+            color: #505050;
+            line-height: 24px;
+            margin-bottom: 0;
+            & span {
+                font-size: 16px;
+                line-height: 24px;
+                float: left;
+                margin-right: 2px;
+            }
+        }
+        & .ratting {
+            & i {
+                color: $theme-color;
+                font-size: 14px;
+                float: left;
+                margin-left: 5px;
+                line-height: 24px;
+            }
+        }
+    }
+    & p {
+        margin-bottom: 15px;
+    }
+    /*-- List Product Action --*/
+    & .action-btn {
+        & a {
+            height: 27px;
+            min-width: 27px;
+            line-height: 28px;
+            text-align: center;
+            color: $color-white;
+            float: left;
+            font-weight: normal;
+            font-size: 11px;
+            text-transform: uppercase;
+            font-family: $montserrat;
+            margin-right: 8px;
+            & i {
+                line-height: 28px;
+                display: block;
+                font-size: 16px;
+            }
+            &.add-cart {
+                padding: 0 14px;
+                background-color: #505050;
+                &:hover {
+                    background-color: $theme-color;
+                }
+            }
+            &.wishlist {
+                background-color: $theme-color;
+                width: 27px;
+                &:hover {
+                    background-color: #505050;
+                }
+            }
+        }
+    }
+}

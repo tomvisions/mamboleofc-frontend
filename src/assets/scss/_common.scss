@@ -1,0 +1,274 @@
+/*----------------------------------------*/
+/*  1.  Theme default CSS
+/*----------------------------------------*/
+/*-- Font Family --*/
+/*@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700');*/
+/*-- Common Style --*/
+html, body {
+  height: 100%;
+}
+body{
+    line-height: 24px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    visibility: visible;
+    font-family: $poppins;
+    color: $text-color;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: $heading-color;
+    font-family: $montserrat;
+    font-weight: bold;
+    margin-top: 0;
+}
+p:last-child {
+    margin-bottom: 0;
+}
+a, button {
+    color: inherit;
+    display: inline-block;
+    line-height: inherit;
+    text-decoration: none;
+}
+a, i, button, img, input, span,
+*:before, *:after {
+  @include transition(all 0.3s ease 0s);
+}
+*:focus {
+  outline:0px solid
+}
+a:focus {
+  color: inherit;
+  outline: medium none;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul{
+  list-style: outside none none;
+  margin: 0;
+  padding: 0;
+}
+/*-- Common Class --*/
+.fix {
+  overflow:hidden
+}
+.wrapper.fix{
+  position: relative;
+}
+.clear{
+  clear: both;
+}
+.float-left {
+  float: left;
+}
+.float-right {
+  float: right;
+}
+.overlay {
+    position: relative;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    z-index: 1;
+    &::before {
+        background-color: #323232;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.8;
+        content: "";
+        z-index: -1;
+    }
+}
+.section {
+    float: left;
+    width: 100%;
+}
+.section.bg-gray {
+    background-color: #f1f1f1;
+}
+.section.bg-white {
+    background-color: $color-white;
+}
+
+blockquote {
+  padding: 10px 20px;
+  margin: 0 0 20px;
+  font-size: 17.5px;
+  border-left: 5px solid #eee;
+}
+
+/*************************
+ Bootstrap Custom Container
+************************/
+.container, 
+.container-fluid, 
+.container-lg, 
+.container-md, 
+.container-sm, 
+.container-xl, 
+.container-xxl {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+@media (min-width: 576px){
+  .container, 
+  .container-sm {
+    max-width: 540px;
+}
+}
+
+@media (min-width: 768px){
+  .container, 
+  .container-md, 
+  .container-sm {
+    max-width: 720px;
+}
+}
+
+@media (min-width: 992px){
+  .container, 
+  .container-lg, 
+  .container-md, 
+  .container-sm {
+    max-width: 960px;
+}
+}
+
+@media (min-width: 1200px){
+  .container, 
+  .container-lg, 
+  .container-md, 
+  .container-sm, 
+  .container-xl {
+    max-width: 1200px;
+  }
+}
+
+@media (min-width: 1400px){
+  .container, 
+  .container-lg, 
+  .container-md, 
+  .container-sm, 
+  .container-xl, 
+  .container-xxl {
+    max-width: 1200px;
+  }
+}
+
+
+.row {
+  --bs-gutter-x: 30px;
+}
+
+
+.tab-content .tab-pane {
+  display: block;
+  height: 0;
+  max-width: 100%;
+  visibility: hidden;
+  overflow: hidden;
+opacity: 0;
+}
+
+.tab-content .tab-pane.active {
+  height: auto;
+  visibility: visible;
+  opacity: 1;
+  overflow: visible;
+}
+
+.table{
+  white-space: nowrap;
+}
+/*-- Container Width For Mobile Device --*/
+@media #{$large-mobile}{
+    .container {
+        width: 450px;
+    }
+}
+@media #{$small-mobile}{
+    .container {
+        width: 300px;
+    }
+}
+/*-- Margin Top --*/
+@for $i from 0 through 30 {
+    .mt-#{5 * $i}{margin-top: 5px * $i;}
+}
+/*-- Margin Bottom --*/
+@for $i from 0 through 30 {
+    .mb-#{5 * $i}{margin-bottom: 5px *$i;}
+}
+/*-- Padding Top --*/
+@for $i from 0 through 30 {
+    .pt-#{5 * $i}{padding-top: 5px *$i;}
+}
+/*-- Padding Bottom --*/
+@for $i from 0 through 30 {
+    .pb-#{5 * $i}{padding-bottom: 5px *$i;}
+}
+/*-- Input Placeholder --*/
+input:-moz-placeholder, textarea:-moz-placeholder {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+input::-moz-placeholder, textarea::-moz-placeholder {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+}
+/*-- Scroll Up --*/
+#scrollUp {
+    width: 40px;
+    height: 40px;
+    color: $color-white;
+    right: 40px;
+    bottom: 40px;
+    text-align: center;
+    overflow: hidden;
+    background-color: $theme-color;
+    @media #{$small-mobile}{
+        display: none !important;
+    }
+    & i {
+        display: block;
+        line-height: 40px;
+        font-size: 24px;
+    }
+    &:hover i {
+        -webkit-animation-name: fadeInUp;
+        animation-name: fadeInUp;
+        -webkit-animation-duration:1s;
+        animation-duration:1s;
+        -webkit-animation-fill-mode:both;
+        animation-fill-mode:both
+    }
+}
+
+  /* the slides */
+  .slick-slide {
+    margin: 0 15px;
+  }
+  /* the parent */
+  .slick-list {
+    margin: 0 -15px;
+  }

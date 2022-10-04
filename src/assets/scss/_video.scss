@@ -1,0 +1,33 @@
+/*----------------------------------------*/
+/*  12.  Video Area
+/*----------------------------------------*/
+.video-area {
+    background-image: url(../img/bg/video.jpg);
+    padding: 180px 0;
+    @media #{$large-mobile}{
+        padding: 100px 0;
+    }
+}
+/*-- Video Wrapper --*/
+.video-wrapper {
+    & h1 {
+        font-size: 34px;
+        color: $color-white;
+        margin-bottom: 27px;
+        @media #{$large-mobile}{
+            font-size: 24px;
+        }
+    }
+    & a {
+        display: inline-block;
+        color: $color-white;
+        &:hover {
+            color: $theme-color;
+        }
+        & i {
+            display: block;
+            font-size: 50px;
+            line-height: 42px;
+        }
+    }
+}

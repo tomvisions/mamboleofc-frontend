@@ -1,0 +1,93 @@
+<style>
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around
+  }
+
+
+  li {
+    flex-grow: 1;
+    margin:15px;
+
+  }
+
+  img {
+    max-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+  }
+</style>
+
+<!-- Page Banner Area Start -->
+<div id="page-banner-area" class="page-banner-area upcoming-events section">
+  <div class="container">
+    <div class="row">
+      <div class="page-banner-title text-center col-12">
+        <h2>events</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Page Banner Area End -->
+
+<!-- About Area Start -->
+<div id="about-area" class="about-area section pb-60 pt-60">
+  <div class="container">
+    <div class="row flex-column flex-lg-row-reverse">
+      <!-- About Content -->
+      <div class="about-content events-content-2 col-12">
+        <p>
+          Mamboleo FC is dedicated to fostering connection and community through social events promoting sport, fitness,
+          nature music and the arts. We partner with local businesses and organizations to bring unique events to the
+          Ottawa community, our members and friends.
+        </p>
+        <ng-container *ngIf="(events$ | async) as events">
+          <ng-container *ngIf="events.length > 0; else noEvents">
+            <div class="row">
+              <div class="about-image col-lg-2 col-12 pb-10 pt-10">
+                <img
+                  src="http://tomvisions-images.s3-website-us-east-1.amazonaws.com/200x200/mamboleofc/omer-guilder-tournament.jpg"
+                  width="150" alt="About MamboleFC">
+              </div>
+              <div class="about-image col-lg-10 col-12">
+                <p>
+                  <strong>Join us on Saturday, September 10, 2022 for the first annual Omer Gulder Memorial Charity
+                    Tournament. This is an event you won’t want to miss!</strong>
+                </p>
+                <a *ngFor="let event of events" href="/events/{{event.slug}}"><h4>Learn More</h4></a>
+              </div>
+            </div>
+            <div class="about-image col-lg-12 col-12 pt-40">
+              <h3>Past Events</h3>
+            </div>
+            <div class="about-image col-12">
+              <div style="display: flex;justify-content: space-around">
+                <ul>
+                  <li>
+                    <img src="http://tomvisions-images.s3-website-us-east-1.amazonaws.com/380x450/mamboleofc/community-park-event.jpg">
+                  </li>
+                  <li>
+                    <img src="http://tomvisions-images.s3-website-us-east-1.amazonaws.com/350x450/mamboleofc/roots-and-culture-event.jpg">
+                  </li>
+                  <li>
+                    <img src="http://tomvisions-images.s3-website-us-east-1.amazonaws.com/350x450/mamboleofc/kick-off-party-event.jpg">
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </ng-container>
+        </ng-container>
+
+
+
+        <ng-template #noEvents>
+          <div class="p-8 sm:p-16 border-t text-4xl font-semibold tracking-tight text-center">There are no events!</div>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- About Area End -->

@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  node-development-16-al2:
+    build: .
+    container_name: node_mamboleofc_frontend
+    expose:
+      - 4202
+    ports:
+      - "4202:4202"
+    volumes:
+      - "d:/development/mamboleofc-frontend:/app

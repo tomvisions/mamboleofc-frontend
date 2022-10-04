@@ -1,0 +1,99 @@
+<style>
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  }
+
+  li {
+    height: 100vh;
+    flex-grow: 1;
+  }
+
+  img {
+    max-height: 100%;
+    min-width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+  }
+</style>
+
+<!-- Page Banner Area Start -->
+<div id="page-banner-area" class="page-banner-area contactus section">
+  <div class="container">
+    <div class="row">
+      <div class="page-banner-title text-center col-xs-12">
+        <h2>contact us</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Page Banner Area End -->
+
+<!-- Contact Area Start -->
+<div id="contact-area" class="contact-area section pb-60 pt-60">
+  <div class="container">
+    <div class="row">
+      <!-- Contact Info -->
+      <div class="col-lg-4 col-md-5 col-12 mb-30">
+        <div class="contact-info">
+          <h4>Follow Us</h4>
+        </div>
+        <a href="https://www.facebook.com/mamboleofc" target="_blank"><img
+          src="https://tomvisions-images.s3.amazonaws.com/mamboleofc/facebook-logo.png"></a>
+        <a href="https://www.instagram.com/mamboleo_fc/" target="_blank"><img
+          src="https://tomvisions-images.s3.amazonaws.com/mamboleofc/instagram-logo.png"></a>
+        <a href="https://twitter.com/MamboleoFc" target="_blank"><img
+          src="https://tomvisions-images.s3.amazonaws.com/mamboleofc/twitter-logo.png"></a>
+      </div>
+      <!-- Contact Form -->
+      <div class="col-lg-8 col-md-7 col-12 mb-30">
+        <div class="contact-form">
+          <div class="form">
+            <h4>Get In Touch</h4>
+            <form [formGroup]="selectedContactUsForm">
+              <input type="text" name="name" placeholder="Name" [formControlName]="'name'">
+              <input type="email" name="email" placeholder="Email" [formControlName]="'email'">
+              <input type="text" name="phone" name="name" placeholder="Phone" [formControlName]="'phone'">
+              <input type="text" name="subject" placeholder="Subject" [formControlName]="'subject'">
+              <textarea name="body" placeholder="Body" [formControlName]="'body'"></textarea>
+              <button (click)="submitContact()">Send</button>
+            </form>
+          </div>
+        </div>
+        <div class="success hide">
+          <h4>You have successfully sent the message to Mamboleo FC</h4>
+        </div>
+        <div class="fail hide">
+          <h4>An error occurred. Message was not sent. Please try again later</h4>
+        </div>
+      </div>
+      <div class="about-image col-12">
+        <h4 class="text-center" style="font-size: 18px;text-transform:uppercase">We are proud to partner with</h4>
+        <div style="display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;">
+          <ul>
+            <li>
+              <a href="https://figandcoco.ca/" target="_blank"><img
+                src="https://tomvisions-images.s3.amazonaws.com/mamboleofc/fig-coco-logo.jpg" width="250"
+                height="250"></a>
+            </li>
+            <li>
+              <a href=""><img src="https://tomvisions-images.s3.amazonaws.com/mamboleofc/masca-logo.png" width="250"
+                              height="250"></a>
+            </li>
+            <li>
+              <a href=""><img src="https://tomvisions-images.s3.amazonaws.com/mamboleofc/mamboleo-heritage.png"
+                              width="250" height="250"></a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Contact Area End -->
