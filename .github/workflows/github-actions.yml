@@ -20,3 +20,4 @@ jobs:
       - name: Performing test on app
       - run: npm test
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      - run: echo 'woot'
