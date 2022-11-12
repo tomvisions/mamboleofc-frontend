@@ -19,6 +19,7 @@ jobs:
       - run: echo "Performing NPM Install"
       - run: ln -s package.stage.json package.json
       - run: npm ci
+      - run: npm run build
       - run: echo "Performing test on app"
 #      - run: npm run test
 #     - run: npm run lint
