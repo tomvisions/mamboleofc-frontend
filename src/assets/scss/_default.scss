@@ -1,0 +1,175 @@
+/*-- Section Title --*/
+.section-title {
+    & h1 {
+        font-size: 34px;
+        line-height: 24px;
+        text-transform: uppercase;
+        margin-bottom: 0;
+        @media #{$small-mobile}{
+            font-size: 24px;
+            line-height: 18px;
+        }
+    }
+    &.title-white h1 {
+        color: $color-white;
+    }
+    & h5 {
+        margin-top: 17px;
+        margin-bottom: 0;
+        font-size: 16px;
+        font-weight: 500;
+        color: $text-color;
+    }
+}
+/*-- Page Banner Area --*/
+.page-banner-area {
+    background-image: url(../img/bg/page-banner.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-background-size: cover;
+    padding-top: 240px;
+    padding-bottom: 125px;
+    position: relative;
+    z-index: 1;
+    @media #{$tablet-device}{
+        padding-top: 180px;
+        padding-bottom: 90px;
+    }
+    @media #{$large-mobile}{
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+    @media #{$small-mobile}{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    &::before {
+        background: #000000;
+        background: -moz-linear-gradient(left, #000000 0%, #8c8c8c 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, #000000), color-stop(100%, #8c8c8c));
+        background: -webkit-linear-gradient(left, #000000 0%, #8c8c8c 100%);
+        background: -o-linear-gradient(left, #000000 0%, #8c8c8c 100%);
+        background: -ms-linear-gradient(left, #000000 0%, #8c8c8c 100%);
+        background: linear-gradient(to right, #000000 0%, #8c8c8c 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#8c8c8c', GradientType=1 );
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.75;
+        content: "";
+        z-index: -1;
+    }
+}
+/*-- Page Banner Title --*/
+.page-banner-title {
+    & h2 {
+        font-size: 30px;
+        text-transform: uppercase;
+        color: $color-white;
+        margin-bottom: 0;
+        @media #{$large-mobile}{
+            font-size: 24px;
+        }
+        @media #{$small-mobile}{
+            font-size: 18px;
+        }
+    }
+}
+/*-- Pagination --*/
+.pagination {
+    display: inline-block;
+    margin: 0;
+    vertical-align: top;
+    & p {
+        color: #252525;
+        display: block;
+        float: left;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 35px;
+        margin: 0 18px 0 0;
+        text-transform: uppercase;
+    }
+    & li {
+        display: block;
+        float: left;
+        margin: 0 3px;
+        & a {
+            display: block;
+            font-size: 14px;
+            background-color: #f1f1f1;
+            width: 32px;
+            height: 32px;
+            border: none;
+            line-height: 32px;
+            color: $text-color;
+            padding: 0;
+            border-radius: 0 !important;
+            font-weight: 600;
+            & i {
+                font-size: 18px;
+                line-height: 34px;
+                display: block;
+            }
+        }
+        &.active a, &:hover a {
+            background-color: $theme-color;
+            color: $color-white;
+        }
+    }
+}
+
+
+
+/*-- Panel --*/
+.panel-group {
+    margin-bottom: 20px;
+    & .accordion-item {
+        background-color: transparent;
+        border: medium none;
+        border-radius: 0;
+        box-shadow: none;
+        & + .accordion-item {
+            margin-top: 16.5px;
+        }
+    }
+    & .accordion-header {
+        background-color: #f1f2f3;
+        font-size: 14px;
+        font-weight: 600;
+        line-height: 24px;
+        margin: 0;
+        padding: 9px 10px 9px 15px;
+        text-transform: uppercase;
+        & .accordion-button {
+            color: #333333;
+            display: block;
+            position: relative;
+            padding: 0;
+            background-color: transparent;
+            box-shadow: none;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 700;
+            &:before {
+                color: #909090;
+                content: "\f2fc";
+                font-family: "Material-Design-Iconic-Font";
+                position: absolute;
+                right: 1px;
+            }
+            &.collapsed:before {
+                content: "\f2f9";
+            }
+        }
+    }
+    & .accordion-collapse {
+        & .accordion-body {
+            padding: 5px 10px 5px 15px;
+            & p {}
+        }
+    }
+}

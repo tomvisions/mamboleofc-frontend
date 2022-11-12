@@ -1,0 +1,79 @@
+/*----------------------------------------*/
+/*  11.  Points Table Area
+/*----------------------------------------*/
+.points-table-area {}
+/*-- Points Table --*/
+.points-table {
+    & table {
+        & tr {
+            background-color: #fbfbfb;
+            &:nth-of-type(2n+1) {
+                background-color: #f7f7f7;
+            }
+            &:last-child {
+                & td {
+                    border-bottom: 1px solid #ececec;
+                }
+            }
+            & th {
+                color: #444;
+                font-family: $montserrat;
+                font-size: 12px;
+                font-weight: normal;
+                height: 38px;
+                line-height: 24px;
+                padding: 8px 28px 6px;
+                text-align: center;
+                vertical-align: middle;
+                width: 125px;
+                border-right: 1px solid #ececec;
+                border-top: 1px solid #ececec;
+                &:nth-child(1) {
+                    text-align: left;
+                    width: 220px;
+                    border-left: 1px solid #ececec;
+                }
+            }
+            & td {
+                color: #444;
+                font-family: $montserrat;
+                font-size: 12px;
+                font-weight: normal;
+                height: 38px;
+                line-height: 24px;
+                padding: 8px 28px 6px;
+                text-align: center;
+                vertical-align: middle;
+                width: 125px;
+                border-right: 1px solid #ececec;
+                border-top: 1px solid #ececec;
+                &:nth-child(1) {
+                    text-align: left;
+                    width: 220px;
+                    border-left: 1px solid #ececec;
+                }
+            }
+        }
+    }
+}
+/*-- Points Table Link --*/
+.view-point-table {
+  background-color: #f7f7f7;
+  border: 1px solid #ececec;
+  color: #444;
+  display: inline-block;
+  font-family: $montserrat;
+  font-size: 12px;
+  font-weight: 500;
+  height: 37px;
+  line-height: 23px;
+  padding: 7px 15px 6px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 132px;
+    &:hover {
+        background-color: $theme-color;
+        border-color: $theme-color;
+        color: $color-white;
+    }
+}
