@@ -1,12 +1,84 @@
-<div>
-  <div gallerize="gallery1">
-    gallery1
-    <img *ngIf="true" src="https://preview.ibb.co/jrsA6R/img12.jpg" />
-    <img *ngIf="true" src="https://preview.ibb.co/kPE1D6/clouds.jpg" />
-
+<!-- Page Banner Area Start -->
+<div id="page-banner-area" class="page-banner-area contactus section">
+  <div class="container">
+    <div class="row">
+      <div class="page-banner-title text-center col-xs-12">
+        <h2>media</h2>
+      </div>
+    </div>
   </div>
-  <div gallerize="gallery2">
-    gallery2
-    <img *ngIf="true" src="https://preview.ibb.co/kPE1D6/clouds.jpg" />
+</div>
+<!-- Page Banner Area End -->
+
+<!-- Blog Area Start -->
+<div id="blog-area" class="blog-area section pb-90 pt-120">
+  <div class="container">
+
+
+    <!-- Section Title -->
+    <div class="row">
+      <div class="section-title text-center col-12 mb-70">
+        <h1>Omer Gulder Memorial Charity Tournament</h1>
+      </div>
+    </div>
+    <ng-container *ngIf="(galleries$ | async) as galleries">
+      <ng-container *ngFor="let gallery of galleries; trackBy: trackByFn">
+        <div class="row">
+          <!-- Single Blog -->
+          <div class="blog-item col-lg-4 col-md-6 col-12 mb-30">
+            <!-- Image -->
+            <div class="image"><a href="/media/{{gallery.images[0].gallery_id}}"><img src="{{gallery.images[0].file.small}}" alt=""></a></div>
+            <!-- Content -->
+            <div class="content">
+              <!-- Meta -->
+              <div class="meta">
+                <p class="date">10 JUN 2016</p>
+                <p class="cat"><a href="#">CRICKET</a></p>
+                <p class="author">BY <a href="#">ADMIN</a></p>
+              </div>
+              <!-- Title -->
+              <h3 class="title"><a href="#">{{gallery.name}}</a></h3>
+              <p>Shots taken, token language</p>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+  </div>
+</div>
+<!-- Blog Area End -->
+
+
+<!-- Main -->
+<div class="flex flex-auto overflow-hidden">
+
+  <!-- Products gallery -->
+  <div class="flex flex-col flex-auto sm:mb-18 overflow-hidden sm:overflow-y-auto">
+    <ng-container *ngIf="(galleries$ | async) as galleries">
+      <ng-container *ngIf="galleries.length > 0; else noGalleries">
+        <div class="grid">
+          <!-- Header -->
+          <div
+            class="inventory-grid z-10 sticky top-0 grid gap-4 py-4 px-6 md:px-8 shadow text-md font-semibold text-secondary bg-gray-50 dark:bg-black dark:bg-opacity-5"
+            matSort
+            matSortDisableClear>
+            <div [mat-sort-header]="'name'">Name</div>
+            <div
+              class=""
+              [mat-sort-header]="'info'">
+              Info
+            </div>
+          </div>
+          <!-- Rows -->
+          <ng-container *ngIf="(galleries$ | async) as galleries">
+            <ng-container *ngFor="let gallery of galleries; trackBy: trackByFn">
+
+
+            </ng-container>
+          </ng-container>
+
+        </div>
+      </ng-container>
+    </ng-container>
   </div>
 </div>

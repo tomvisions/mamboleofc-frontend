@@ -19,6 +19,7 @@ import { MissiosVisionsValuesComponent } from './missios-visions-values/missios-
 import { TheFlamingoComponent } from './the-flamingo/the-flamingo.component';
 import { EventComponent } from './event/event.component';
 import { MediaComponent } from './media/media.component';
+import { GalleryComponent } from './media/gallery.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { MediaComponent } from './media/media.component';
     TheFlamingoComponent,
     EventComponent,
     MediaComponent,
+    GalleryComponent
   ],
   imports: [
     BrowserModule,
@@ -49,8 +51,7 @@ import { MediaComponent } from './media/media.component';
   providers: [   {
     provide: GALLERY_CONFIG,
     useValue: {
-      dots: true,
-      imageSize: 'cover'
+      imageSize: 'inside'
     }
   }],
   bootstrap: [AppComponent]
