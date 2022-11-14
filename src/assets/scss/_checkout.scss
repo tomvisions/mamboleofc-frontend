@@ -1,0 +1,88 @@
+/*----------------------------------------*/
+/*  18.  Checkout Area
+/*----------------------------------------*/
+.checkout-area {}
+/*-- Billing Details --*/
+.billing-details {
+    overflow: hidden;
+    & h4 {
+        font-size: 18px;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+    }
+    & form {
+        & input {
+            background-color: $color-white;
+            border: 1px solid #eee;
+            color: $text-color;
+            display: block;
+            height: 42px;
+            line-height: 24px;
+            margin-bottom: 22px;
+            padding: 8px 11px;
+            width: 100%;
+            &:focus {
+                border-color: $theme-color;
+            }
+        }
+        & textarea {
+            background-color: $color-white;
+            border: 1px solid #eee;
+            color: $text-color;
+            display: block;
+            height: 130px;
+            line-height: 24px;
+            padding: 8px 11px;
+            resize: none;
+            width: 100%;
+            &:focus {
+                border-color: $theme-color;
+            }
+        }
+    }
+}
+/*-- Order & Payment --*/
+.order-payment {
+    overflow: hidden;
+    & h4 {
+        font-size: 18px;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+    }
+    & ul {
+        margin-bottom: 28px;
+        margin-top: -12px;
+        & li {
+            color: $text-color;
+            line-height: 39px;
+            overflow: hidden;
+            &:last-child {
+                border-top: 1px solid #909090;
+                color: $theme-color
+            }
+            & + li {
+                border-top: 1px solid #e7e7e7;
+            }
+            & .name {
+                float: left;
+            }
+            & .price {
+                float: right;
+            }
+        }
+    }
+    & .place-order {
+        background-color: $theme-color;
+        border: 1px solid $theme-color;
+        border-radius: 3px;
+        color: $color-white;
+        font-weight: 600;
+        height: 36px;
+        padding: 5px 22px;
+        text-transform: uppercase;
+        &:hover {
+            background-color: transparent;
+            color: $theme-color;
+        }
+    }
+}

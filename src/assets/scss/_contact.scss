@@ -1,0 +1,93 @@
+/*----------------------------------------*/
+/*  21.  Checkout Area
+/*----------------------------------------*/
+
+/*-- Contact Map --*/
+#contact-map {
+    height: 450px;
+    width: 100%;
+    @media #{$large-mobile}{
+        height: 300px;
+    }
+    @media #{$small-mobile}{
+        height: 220px;
+    }
+}
+/*-- Contact Info --*/
+.contact-info {
+    & h4 {
+        font-size: 18px;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+    }
+    & p {
+        font-family: $montserrat;
+        font-size: 14px;
+        color: $text-color;
+        font-weight: 300;
+        & span {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 12px;
+            color: $heading-color;
+            margin-right: 10px;
+        }
+        & a {
+            &:hover {
+                color: $theme-color;
+            }
+        }
+    }
+}
+/*-- Contact Form --*/
+.contact-form {
+    & h4 {
+        font-size: 18px;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+    }
+    & form {
+        margin: 0 -1%;
+        & input[type="text"], input[type="email"] {
+            width: 48%;
+            margin: 0 1% 20px;
+            display: block;
+            float: left;
+            border: 1px solid #ddd;
+            height: 44px;
+            padding: 10px 20px 8px;
+            line-height: 24px;
+            color: $text-color;
+            @media #{$small-mobile}{
+                width: 98%;
+            }
+        }
+        & textarea {
+            width: 98%;
+            margin: 0 1% 20px;
+            display: block;
+            float: left;
+            border: 1px solid #ddd;
+            height: 100px;
+            padding: 10px 20px 10px;
+            line-height: 24px;
+            color: $text-color;
+        }
+        & button[type="submit"] {
+            margin: 0 1%;
+            display: inline-block;
+            border: 1px solid #ddd;
+            height: 44px;
+            padding: 10px 40px 8px;
+            line-height: 24px;
+            color: $text-color;
+            text-transform: uppercase;
+            background-color: transparent;
+            &:hover {
+                background-color: $theme-color;
+                border-color: $theme-color;
+                color: $color-white;
+            }
+        }
+    }
+}

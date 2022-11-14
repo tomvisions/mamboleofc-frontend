@@ -1,0 +1,212 @@
+/*----------------------------------------*/
+/*  5.  Result Area
+/*----------------------------------------*/
+.result-area {}
+/*-- Latest Rersult Wrapper --*/
+.latest-result-wrapper {
+    float: left;
+    width: 100%;
+    position: relative;
+    & .vs {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 80px;
+        height: 80px;
+        margin-left: -40px;
+        margin-top: -40px;
+        border: 5px solid $color-white;
+        background-color: $theme-color;
+        color: $color-white;
+        text-align: center;
+        border-radius: 50%;
+        font-family: $montserrat;
+        font-weight: bold;
+        font-size: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9;
+        @media #{$small-mobile}{
+            bottom: 20px;
+            font-size: 24px;
+            height: 50px;
+            width: 50px;
+            border-width: 4px;
+            margin-left: -25px;
+            margin-top: -12px;
+        }
+    }
+}
+/*-- Single Rersult --*/
+.single-result {
+    position: relative;
+    background-image: url(../img/result/single-bg.jpg);
+    background-size: cover;
+    float: left;
+    height: 251px;
+    width: 100%;
+    padding: 75px 43px 30px;
+    z-index: 1;
+    overflow: hidden;
+    @media #{$small-mobile}{
+        padding: 30px 30px 60px;
+        height: auto;
+    }
+    & .content {
+        width: 315px;
+        text-align: left;
+        @media #{$desktop-device}{
+            width: 240px;
+        }
+        @media #{$tablet-device}{
+             width: 400px;
+        }
+        @media #{$large-mobile}{
+             width: 215px;
+        }
+        @media #{$small-mobile}{
+             width: 100%;
+        }
+        & .team-name {
+            font-size: 22px;
+            line-height: 18px;
+            color: $color-white;
+            float: left;
+            width: 100%;
+            position: relative;
+            margin-bottom: 13px;
+            @media #{$large-mobile}{
+                font-size: 18px;
+            }
+            & span {
+                &.left {
+                    float: left;
+                }
+                &.right {
+                    float: right;
+                }
+                &.border {
+                    position: absolute;
+                    bottom: 1px;
+                    height: 2px;
+                    background-image: url(../img/result/border.png);
+                    background-repeat: repeat;
+                }
+            }
+        }
+        & .goalers {
+            & li {
+                font-size: 14px;
+                line-height: 28px;
+                color: #ddd;
+                @media #{$large-mobile}{
+                    font-size: 13px;
+                }
+            }
+        }
+        & .final-result {
+            font-size: 50px;
+            letter-spacing: 0.8px;
+            font-family: $montserrat;
+            font-weight: 900;
+            color: $color-white;
+            opacity: 0.5;
+            line-height: 36px;
+            position: absolute;
+            bottom: 15px;
+            @media #{$small-mobile}{
+                bottom: 20px;
+                font-size: 30px;
+                line-height: 30px;
+            }
+        }
+    }
+    & .team-banner {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        @media #{$small-mobile}{
+            position: static;
+            margin-bottom: 15px;
+            width: 60px;
+        }
+    }
+    &.result-left {
+        @media #{$desktop-device}{
+            padding-left: 30px;
+        }
+        @media #{$tablet-device}{
+            margin-bottom: 20px;
+        }
+        @media #{$large-mobile}{
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+        &::before {
+            position: absolute;
+            right: 0;
+            top: 0;
+            content: "";
+            border-bottom: 412px solid transparent;
+            border-right: 183px solid $theme-color;
+            z-index: -1;
+            @media #{$small-mobile}{
+                display: none;
+            }
+        }
+        &::after {
+            position: absolute;
+            right: 0;
+            top: 0;
+            content: "";
+            border-bottom: 418px solid transparent;
+            border-right: 186px solid $color-white;
+            z-index: -2;
+            @media #{$small-mobile}{
+                display: none;
+            }
+        }
+        & .team-banner {
+            right: 55px;
+        }
+        
+    }
+    &.result-right {
+        @media #{$desktop-device}{
+            padding-right: 30px;
+        }
+        @media #{$large-mobile}{
+            padding-right: 20px;
+        }
+        &::before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            content: "";
+            border-bottom: 412px solid transparent;
+            border-left: 183px solid $theme-color;
+            z-index: -1;
+            @media #{$small-mobile}{
+                display: none;
+            }
+        }
+        &::after {
+            position: absolute;
+            left: 0;
+            top: 0;
+            content: "";
+            border-bottom: 418px solid transparent;
+            border-left: 186px solid $color-white;
+            z-index: -2;
+            @media #{$small-mobile}{
+                display: none;
+            }
+        }
+        & .team-banner {
+            left: 55px;
+        }
+        
+    }
+}

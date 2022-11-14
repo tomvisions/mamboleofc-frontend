@@ -1,0 +1,333 @@
+/*----------------------------------------*/
+/*  2.  Header Area
+/*----------------------------------------*/
+.header-area {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 9999;
+    border-bottom: 1px solid #737373;
+    @media #{$large-mobile}{
+        position: static;
+        background: #000000;
+        background: -moz-linear-gradient(left, #000000 0%, #8c8c8c 100%);
+        background: -webkit-gradient(left top, right top, color-stop(0%, #000000), color-stop(100%, #8c8c8c));
+        background: -webkit-linear-gradient(left, #000000 0%, #8c8c8c 100%);
+        background: -o-linear-gradient(left, #000000 0%, #8c8c8c 100%);
+        background: -ms-linear-gradient(left, #000000 0%, #8c8c8c 100%);
+        background: linear-gradient(to right, #000000 0%, #8c8c8c 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#8c8c8c', GradientType=1 );
+        border-bottom: none;
+    }
+    &.stick {
+        position: fixed;
+        top: 0;
+        box-shadow: 0 0 3px rgba(#000, 0.15);
+        -webkit-animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
+        animation: 300ms ease-in-out 0s normal none 1 running fadeInDown;
+        border-bottom: none;
+        background-color: transparent;
+        background-image: none;
+        &::before {
+            background: #000000;
+            background: -moz-linear-gradient(left, #000000 0%, #8c8c8c 100%);
+            background: -webkit-gradient(left top, right top, color-stop(0%, #000000), color-stop(100%, #8c8c8c));
+            background: -webkit-linear-gradient(left, #000000 0%, #8c8c8c 100%);
+            background: -o-linear-gradient(left, #000000 0%, #8c8c8c 100%);
+            background: -ms-linear-gradient(left, #000000 0%, #8c8c8c 100%);
+            background: linear-gradient(to right, #000000 0%, #8c8c8c 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#8c8c8c', GradientType=1 );
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.85;
+            content: "";
+            z-index: -1;
+        }
+        & .logo {
+            width: 130px;
+            padding: 23px 0;
+            @media #{$tablet-device}{
+                margin: 0;
+            }
+            @media #{$large-mobile}{
+                padding: 23px 0;
+            }
+        }
+        & .mini-cart {
+            margin-bottom: 27px;
+            margin-top: 27px;
+        }
+        & .main-menu {
+            & nav {
+                & > ul {
+                    & > li {
+                        & > a {
+                            padding: 25px 20px;
+                            @media #{$desktop-device}{
+                                padding: 25px 15px;
+                                font-size: 12px;
+                            }
+                            @media #{$tablet-device}{
+                                padding: 25px 8px;
+                                font-size: 12px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*-- Animation For Stick Menu --*/
+@-webkit-keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+  to {
+    opacity: 1;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+/*-- Navbar Header --*/
+.header-area {
+    /*-- Logo --*/
+    & .logo {
+        height: auto;
+        padding: 36px 0;
+        & img {
+            width: 100%;
+        }
+        @media #{$tablet-device}{
+            width: 130px;
+            padding: 20px 0;
+        }
+        @media #{$large-mobile}{
+            width: 130px;
+            padding: 23px 0;
+        }
+    }
+}
+/*-- Menu --*/
+.main-menu {
+    padding: 0;
+    @media #{$large-mobile}{
+        margin: 0;
+        float: left;
+        width: 100%;
+    }
+    & nav {
+        @media #{$large-mobile}{
+            padding: 15px 0;
+        }
+        & > ul {
+            & > li {
+                display: block;
+                float: left;
+                position: relative;
+                & > a {
+                    display: block;
+                    text-transform: uppercase;
+                    font-size: 14px;
+                    color: $color-white;
+                    line-height: 30px;
+                    font-weight: 500;
+                    font-family: $montserrat;
+                    padding: 45px 20px;
+                    @media #{$desktop-device}{
+                        padding: 45px 15px;
+                        font-size: 12px;
+                    }
+                    @media #{$tablet-device}{
+                        padding: 25px 8px;
+                        font-size: 12px;
+                    }
+                    &:hover {
+                        color: $theme-color;
+                    }
+                }
+                &.active {
+                    & > a {
+                        color: $theme-color;
+                    }
+                }
+                & > ul {
+                    position: absolute;
+                    left: 0;
+                    top: 100%;
+                    background-color: $color-white;
+                    width: 220px;
+                    padding: 12px 0;
+                    margin-top: 20px;
+                    opacity: 0;
+                    visibility: hidden;
+                    box-shadow: 0 2px 2px rgba(#000, 0.15);
+                    @include transition(all 0.3s ease 0s);
+                    & > li {
+                        & > a {
+                            color: $text-color;
+                            padding: 4px 20px;
+                            text-transform: capitalize;
+                            display: block;
+                            &:hover {
+                                color: $theme-color;
+                            }
+                        }
+                    }
+                }
+                &:hover > ul {
+                    opacity: 1;
+                    margin-top: 0;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}
+/*-- Cart Button --*/
+.mini-cart {
+    margin-left: 33px;
+    margin-bottom: 47px;
+    margin-top: 47px;
+    @media #{$tablet-device}{
+        margin-bottom: 27px;
+        margin-top: 27px;
+    }
+    @media #{$large-mobile}{
+        position: absolute;
+        right: 75px;
+        top: 0;
+        z-index: 88;
+        margin-bottom: 27px;
+        margin-top: 27px;
+    }
+    & a {
+        color: $color-white;
+        &:hover {
+            color: $theme-color;
+        }
+        & i {
+            display: block;
+            line-height: 24px;
+            font-size: 16px;
+            letter-spacing: 0.4;
+        }
+    }
+}
+/*-- Mobile Mean Menu
+============================= */
+.mean-container .mean-bar, .mean-container .mean-bar * {
+  box-sizing: border-box;
+}
+.mobile-menu {
+  float: left;
+  width: 100%;
+}
+.mean-container .mean-bar {
+  background-color: transparent;
+  min-height: 0;
+  padding: 0;
+}
+/* Mean Menu Reveal */
+.mean-container a.meanmenu-reveal {
+  height: 30px;
+  padding: 2px 0;
+  text-indent: 0;
+  text-align: center;
+  top: -58px;
+  width: 30px;
+}
+.stick .mean-container a.meanmenu-reveal {
+  top: -58px;
+}
+.mean-container a.meanmenu-reveal i {
+  box-sizing: border-box;
+  display: block;
+  font-size: 30px;
+  line-height: 30px;
+  padding: 0;
+}
+/* Sub Menu Expand */
+.mean-container .mean-nav ul li a.mean-expand {
+  font-size: 18px !important;
+  height: 36px;
+  border: none !important;
+  line-height: 36px;
+  padding: 0 10px !important;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 36px;
+  margin: 0;
+  z-index: 2;
+}
+.mean-container .mean-nav ul li a.mean-expand:hover {
+  background-color: transparent;
+}
+/* Mean Menu Nav */
+.mean-container .mean-nav {
+  background-color: transparent;
+  margin-top: 0;
+}
+.mean-container .mean-nav ul {
+  overflow: hidden;
+    padding: 15px 0;
+}
+.mean-container .mean-nav ul li {
+  width: 100%;
+}
+.mean-container .mean-nav ul li a {
+  border: medium none;
+  display: block;
+  font-size: 14px;
+  line-height: 23px;
+  padding: 3px 0;
+  position: relative;
+  font-family: $montserrat;
+  text-transform: uppercase;
+  width: 100%;
+color: $color-white;
+line-height: 30px;
+font-weight: 500;
+}
+.mean-container .mean-nav ul li a:hover, .mean-container .mean-nav ul li.active a {
+  background-color: transparent;
+  color: $theme-color;
+}
+/* Mean Sub Menu */
+.mean-container .mean-nav > ul > li ul {
+  padding-bottom: 10px;
+  padding-left: 15px;
+}
+.mean-container .mean-nav > ul > li > ul li{}
+.mean-container .mean-nav > ul > li > ul li a {
+  border: medium none;
+  color: $color-white;
+  font-size: 13px;
+  opacity: 1;
+  padding: 8px 15px 8px 0;
+  width: 100%;
+}

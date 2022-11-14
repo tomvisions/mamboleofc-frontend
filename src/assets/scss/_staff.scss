@@ -1,0 +1,89 @@
+/*----------------------------------------*/
+/*  7.  Staff Area
+/*----------------------------------------*/
+.staff-area {}
+/*-- Staff Tab List --*/
+.staff-tab-list {
+    border: none;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: center;
+    & .nav-item {
+        display: inline-block;
+        float: none;
+        margin: 0 15px;
+        & .nav-link {
+            font-size: 15px;
+            font-weight: 500;
+            color: #5b5b5b;
+            text-transform: capitalize;
+            font-family: $montserrat;
+            border: medium none !important;
+            line-height: 24px;
+            padding: 0;
+            &:hover, &.active {
+                color: $theme-color;
+                background-color: transparent;
+            }
+        }
+        &.active .nav-link {
+            color: $theme-color;
+            background-color: transparent;
+            cursor: pointer;
+            &:hover, &:focus {
+                color: $theme-color;
+                cursor: pointer;
+            }
+        }
+    }
+}
+/*-- Staff Slider --*/
+.staff-slider {
+    float: left;
+    width: 100%;
+}
+/*-- Staff Item --*/
+.staff-item {
+    & .image {
+        & img {
+            width: 100%;
+        }
+    }
+    & .content {
+        background-color: #454545;
+        overflow: hidden;
+        padding: 0 24px;
+        .details {
+            float: left;
+            padding: 18px 0;
+            & h4 {
+                font-size: 20px;
+                font-weight: 600;
+                margin-bottom: 4px;
+                & a {
+                    color: $color-white;
+                    &:hover {
+                        color: $theme-color;
+                    }
+                }
+            }
+            & p {
+                color: #c9c9c9;
+                font-weight: 500;
+                font-family: $montserrat;
+                font-size: 14px;
+                line-height: 16px;
+            }
+        }
+        & h2.num {
+            float: right;
+            border-left: 1px dashed #eee;
+            font-size: 30px;
+            font-weight: 600;
+            color: $color-white;
+            line-height: 28px;
+            padding: 25px 0 25px 20px;
+            margin-bottom: 0;
+        }
+    }
+}

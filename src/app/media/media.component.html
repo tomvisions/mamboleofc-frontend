@@ -1,0 +1,44 @@
+<!-- Page Banner Area Start -->
+<div id="page-banner-area" class="page-banner-area contactus section">
+  <div class="container">
+    <div class="row">
+      <div class="page-banner-title text-center col-xs-12">
+        <h2>media</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Page Banner Area End -->
+
+<!-- Blog Area Start -->
+<div id="blog-area" class="blog-area section pb-90 pt-120">
+  <div class="container">
+
+
+    <!-- Section Title -->
+    <div class="row">
+      <div class="section-title text-center col-12 mb-70">
+        <h1>Omer Gulder Memorial Charity Tournament</h1>
+      </div>
+    </div>
+    <div class="row">
+
+    <ng-container *ngIf="(galleries$ | async) as galleries">
+      <ng-container *ngFor="let gallery of galleries; trackBy: trackByFn">
+          <!-- Single Blog -->
+          <div class="blog-item col-lg-4 col-md-6 col-12 mb-30">
+            <!-- Image -->
+            <div class="image"><a href="/media/{{gallery.id}}"><img src="{{gallery.images[0].file.small}}" alt=""></a></div>
+            <!-- Content -->
+            <div class="content">
+              <!-- Title -->
+              <h3 class="title"><a href="#">{{gallery.name}}</a></h3>
+              <p>Shots taken, token language</p>
+            </div>
+          </div>
+      </ng-container>
+    </ng-container>
+    </div>
+  </div>
+</div>
+<!-- Blog Area End -->

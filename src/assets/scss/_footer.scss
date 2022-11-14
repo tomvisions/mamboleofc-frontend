@@ -1,0 +1,241 @@
+/*----------------------------------------*/
+/*  22.  Footer Area
+/*----------------------------------------*/
+.footer-top-area {
+    background-color: #363636;
+    position: relative;
+}
+/*-- Footer Top Left BG --*/
+.footer-top-left-bg {
+    background-image: url("../img/bg/footer-left.jpg");
+    position: absolute;
+    left: 0;
+    height: 100%;
+    top: 0;
+    width: 44%;
+    box-shadow: 5px 0 5px rgba(#000, 0.15);
+    @media #{$laptop-device}{
+        width: 40%;
+    }
+    @media #{$desktop-device}{
+        width: 40%;
+    }
+    @media #{$tablet-device}{
+        display: none;
+    }
+    @media #{$large-mobile}{
+        display: none;
+    }
+    &::before {
+        opacity: 0.9;
+    }
+}
+/*-- Footer About --*/
+.footer-about {
+    padding-right: 70px;
+    @media #{$small-mobile}{
+        padding-right: 0;
+    }
+    & img {
+        margin-bottom: 28px;
+    }
+    & p {
+        font-family: $montserrat;
+        font-size: 14px;
+        line-height: 24px;
+        color: #efefef;
+        font-weight: 300;
+        letter-spacing: 0.2px;
+        margin-bottom: 25px;
+    }
+    & .social {
+        & a {
+            display: block;
+            width: 27px;
+            height: 27px;
+            text-align: center;
+            float: left;
+            margin-right: 8px;
+            border-radius: 50%;
+            color: $color-white;
+            &:hover {
+                background-color: $theme-color;
+            }
+            & i {
+                line-height: 27px;
+                display: block;
+            }
+        }
+    }
+}
+/*-- Twitter Widget --*/
+.twitter-widget {
+    padding: 0 55px 0 20px;
+    @media #{$desktop-device}{
+        padding: 0 30px 0 0;
+    }
+    @media #{$tablet-device}{
+        padding: 0;
+    }
+    @media #{$large-mobile}{
+        padding: 0;
+    }
+    & .title {
+        font-size: 22px;
+        font-family: $montserrat;
+        line-height: 18px;
+        color: #efefef;
+        font-weight: 500;
+        letter-spacing: 0.2px;
+        margin-bottom: 26px;
+    }
+    & .single-twite {
+        margin-bottom: 10px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+        & p {
+            font-family: $montserrat;
+            font-size: 14px;
+            line-height: 22px;
+            color: #efefef;
+            font-weight: 300;
+            margin-bottom: 0;
+            & a {
+                color: #6faedc;
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+        }
+        & span {
+            font-family: $montserrat;
+            font-size: 14px;
+            line-height: 22px;
+            color: #ddd;
+            font-weight: 300;
+            letter-spacing: 0.2px;
+        }
+    }
+}
+/*-- Subscribe Widget --*/
+.subscribe-widget {
+    margin-left: -30px;
+    @media #{$tablet-device}{
+        margin: 0;
+    }
+    @media #{$large-mobile}{
+        margin: 0;
+    }
+    & .title {
+        font-size: 22px;
+        font-family: $montserrat;
+        line-height: 18px;
+        color: #efefef;
+        font-weight: 500;
+        letter-spacing: 0.2px;
+        margin-bottom: 26px;
+    }
+    & .subscribe-form {
+        margin-bottom: 30px;
+        & input {
+            width: 256px;
+            background-color: #3c3c3c;
+            color: #aaaaaa;
+            font-family: $montserrat;
+            font-size: 14px;
+            line-height: 20px;
+            font-weight: 300;
+            height: 40px;
+            padding: 10px 20px;
+            border: none;
+            float: left;
+            box-shadow: 0 1px 4px rgba(#000, 0.15);
+            @media #{$desktop-device}{
+                width: 195px;
+            }
+            @media #{$small-mobile}{
+                width: 195px;
+            }
+        }
+        & button {
+            width: 44px;
+            height: 40px;
+            background-color: #444444;
+            color: $color-white;
+            text-align: center;
+            padding: 10px;
+            border: none;
+            box-shadow: 0 1px 4px rgba(#000, 0.15);
+            &:hover {
+                background-color: $theme-color;
+            }
+            & i {
+                font-size: 18px;
+                line-height: 20px;
+                display: block;
+            }
+        }
+    }
+    & p {
+        font-family: $montserrat;
+        font-size: 14px;
+        line-height: 20px;
+        color: #ddd;
+        font-weight: 300;
+        margin-bottom: 3px;
+        & span {
+            color: #ddd;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+    }
+}
+/*-- Footer Bottom --*/
+.footer-bottom-area {
+    background-color: #313131;
+    padding: 13px 0;
+    /*-- Copyright --*/
+    & .copyright {
+        @media #{$large-mobile}{
+            text-align: center;
+        }
+        & p {
+            color: #ddd;
+            font-family: $montserrat;
+            font-size: 12px;
+            line-height: 24px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            margin-bottom: 0;
+            & span {
+                color: $color-white;
+            }
+        }
+    };
+    /*-- Author Credit --*/
+    & .author-credit {
+        @media #{$large-mobile}{
+            text-align: center;
+        }
+        & p {
+            color: #ddd;
+            font-family: $montserrat;
+            font-size: 12px;
+            line-height: 24px;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+            margin-bottom: 0;
+            & a {
+                &:hover {
+                    color: $theme-color;
+                }
+            }
+            & i {
+                color: $theme-color;
+            }
+        }
+    }
+}
+
+

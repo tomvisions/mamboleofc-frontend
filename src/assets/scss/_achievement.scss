@@ -1,0 +1,137 @@
+/*----------------------------------------*/
+/*  19.  Achievement Area
+/*----------------------------------------*/
+.achievement-area {
+    background-image: url(../img/bg/achievement.jpg);
+    &::before {
+        opacity: 0.9;
+    }
+}
+/*-- Achievement Timeline --*/
+.achievement-timeline {
+    position: relative;
+    float: left;
+    width: 100%;
+    &::before {
+        position: absolute;
+        left: 50%;
+        width: 1px;
+        top: 50px;
+        bottom: 90px;
+        content: "";
+        border-right: 1px dashed $color-white;
+        @media #{$large-mobile}{
+            display: none;
+        }
+    }
+}
+/*-- Single Timeline --*/
+.single-timeline {
+    width: 60%;
+    position: relative;
+    margin-bottom: 70px;
+    @media #{$large-mobile}{
+        width: 100%;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-right: 0 !important;
+        padding-left: 130px !important;
+        text-align: left !important;
+    }
+    @media #{$small-mobile}{
+        padding-left: 0 !important;
+    }
+    &:last-child {
+        margin-bottom: 0;
+    }
+    &:nth-child(2n+1) {
+        margin-left: 40%;
+        text-align: left;
+        padding-left: 185px;
+        @media #{$desktop-device}{
+            padding-left: 160px;
+        }
+        @media #{$tablet-device}{
+            padding-left: 150px;
+        }
+        & .date {
+            left: 58px;
+            @media #{$desktop-device}{
+                left: 40px;
+            }
+            @media #{$tablet-device}{
+                left: 33px;
+            }
+        }
+    }
+    &:nth-child(2n) {
+        text-align: right;
+        padding-right: 185px;
+        @media #{$desktop-device}{
+            padding-right: 160px;
+        }
+        @media #{$tablet-device}{
+            padding-right: 150px;
+        }
+        & .date {
+            right: 58px;
+            @media #{$desktop-device}{
+                right: 40px;
+            }
+            @media #{$tablet-device}{
+                right: 33px;
+            }
+        }
+    }
+    & .date {
+        width: 78px;
+        height: 78px;
+        background-color: $theme-color;
+        display: block;
+        position: absolute;
+        top: 0;
+        @include transform(rotate(45deg));
+        @media #{$large-mobile}{
+            left: 15px !important;
+            right: auto;
+            top: 15px;
+        }
+        @media #{$small-mobile}{
+            position: static;
+            margin-left: 15px;
+            margin-bottom: 30px;
+        }
+        &::before {
+            position: absolute;
+            border: 2px dashed #313131;
+            left: 5px;
+            right: 5px;
+            top: 5px;
+            bottom: 5px;
+            content: "";
+            
+        }
+        & span {
+            display: block;
+            font-size: 18px;
+            color: #505050;
+            font-family: $montserrat;
+            font-weight: 600px;
+            line-height: 78px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            @include transform(rotate(-45deg));
+        }
+    }
+    & .content {
+        & h4 {
+            color: $color-white;
+            margin-top: 7px;
+            text-transform: uppercase;
+        }
+        & p {
+            color: $color-white;
+        }
+    }
+}

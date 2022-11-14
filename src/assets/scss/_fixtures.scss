@@ -1,0 +1,56 @@
+/*----------------------------------------*/
+/*  14.  Fixtures Area
+/*----------------------------------------*/
+/*-- Fixtures Table --*/
+.fixtures-table {
+    & table {
+        margin: 0;
+        & tr {
+            background-color: #fbfbfb;
+            &:nth-of-type(2n+1) {
+                background-color: #f7f7f7;
+            }
+            &:last-child {
+                & td {
+                    border-bottom: 1px solid #ececec;
+                }
+            }
+            & th {
+                color: #444;
+                font-family: $montserrat;
+                font-size: 12px;
+                font-weight: normal;
+                height: 38px;
+                line-height: 24px;
+                padding: 8px 28px 6px;
+                text-align: center;
+                vertical-align: middle;
+                text-transform: uppercase;
+                border-right: 1px solid #ececec;
+                border-top: 1px solid #ececec;
+                &:nth-child(1) {
+                    border-left: 1px solid #ececec;
+                }
+            }
+            & td {
+                color: #444;
+                font-family: $montserrat;
+                font-size: 12px;
+                font-weight: normal;
+                height: 38px;
+                line-height: 24px;
+                padding: 8px 28px 6px;
+                text-align: center;
+                text-transform: uppercase;
+                vertical-align: middle;
+                border-right: 1px solid #ececec;
+                border-top: 1px solid #ececec;
+                &:nth-child(1) {
+                    color: #878787;
+                    text-transform: capitalize;
+                    border-left: 1px solid #ececec;
+                }
+            }
+        }
+    }
+}
