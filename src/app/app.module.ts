@@ -51,7 +51,7 @@ import { GalleryComponent } from './media/gallery.component';
   providers: [   {
     provide: GALLERY_CONFIG,
     useValue: {
-      imageSize: 'inside'
+
     }
   }],
   bootstrap: [AppComponent]

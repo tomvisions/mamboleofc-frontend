@@ -48,12 +48,6 @@ export class MediaComponent implements OnInit, AfterViewInit, OnDestroy {
      //   this._changeDetectorRef.markForCheck();
       });
     this.galleries$ = this._mediaService.galleries$;
-    console.log(this.galleries$);
-
-    this.images = [
-      new ImageItem({ src: 'IMAGE_SRC_URL', thumb: 'IMAGE_THUMBNAIL_URL' }),
-    // ... more items
-  ];
   }
 
   /**

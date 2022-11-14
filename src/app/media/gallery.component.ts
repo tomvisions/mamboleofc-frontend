@@ -43,36 +43,13 @@ export class GalleryComponent implements OnInit, AfterViewInit, OnDestroy {
     this._mediaService.gallery$
       .pipe(takeUntil(this._unsubscribeAll))
       .subscribe((gallery: Gallery) => {
-        console.log('the gallery');
-        console.log(gallery);
-//      console.log(gallery[0].id);
           for (let images of gallery.images) {
-            console.log(images.file);
             this.images.push(new ImageItem({ src: `${images.file.original}`, thumb: `${images.file.small}` }));
-//            console.log(images);
           }
-        // Update the pagination
- //       this.pagination = pagination;
 
         // Mark for check
         //   this._changeDetectorRef.markForCheck();
       });
-  //  console.log('the stuff');
-  //  const boo = this._mediaService.getGalleryById;
-   // console.log(boo);
-   // this.galleries.
-  //  console.log(this.galleries);
-
-
-  //  for (let gallery of this.galleries.value) {
-  //    console.log(gallery);
-  //  }
-//    new ImageItem({ src: 'IMAGE_SRC_URL', thumb: 'IMAGE_THUMBNAIL_URL' }),
-   // this.images = [
-  //    new ImageItem({ src: 'IMAGE_SRC_URL', thumb: 'IMAGE_THUMBNAIL_URL' }),
-      // ... more items
-  //  ];
-    console.log(this.images);
   }
 
   /**

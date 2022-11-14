@@ -10,10 +10,12 @@ import {FollowUsComponent} from "./follow-us/follow-us.component";
 import {BlogComponent} from "./blog/blog.component";
 import {EventsComponent} from "./events/events.component";
 import {MediaComponent} from "./media/media.component";
-
+import {GalleryComponent} from "./media/gallery.component";
 import {EventsResolver} from "./events/events.resolvers";
 import {EventResolver} from "./event/event.resolvers";
 import {EventComponent} from "./event/event.component";
+import {MediaResolver} from "./media/media.resolver";
+import {GalleryResolver} from "./media/gallery.resolver";
 
 export const routes: Routes = [
   {
@@ -51,6 +53,16 @@ export const routes: Routes = [
   {
     path: 'media',
     component: MediaComponent,
+    resolve: {
+      galleries: MediaResolver,
+    }
+  },
+  {
+    path: 'media/:id',
+    component: GalleryComponent,
+    resolve: {
+      galleries: GalleryResolver,
+    }
   },
   {
     path: 'events',
