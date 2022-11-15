@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, filter, map, Observable, of, switchMap, take, tap, throwError } from 'rxjs';
 import {Gallery, GalleryPagination, GetGallery} from "./media.type";
 import {Event} from "../event/event.type";
+import {SharedService} from "../shared.service";
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,7 @@ export class MediaService
   /**
    * Constructor
    */
-  constructor(private _httpClient: HttpClient)
+  constructor(private _httpClient: HttpClient, private _sharedService: SharedService)
   {
   }
 
@@ -41,18 +42,14 @@ export class MediaService
     console.log(slug);
     return this.gallery$.pipe(
       take(1),
-      switchMap(gallery => this._httpClient.get<GetGallery>(`http://127.0.0.1:3000/api/v1/gallery?gallery_id=${slug}`,
+      switchMap(gallery => this._httpClient.get<GetGallery>(`${this._sharedService.apiLocation}/api/v1/gallery?gallery_id=${slug}`,
         {
           headers: {
             'Content-Type': 'application/json'
           }
         }).pipe(
         map((getgallery) => {
-      //  console.log('the get');
-       //   console.log(getgallery);
           const gallery = getgallery.galleries[0]
-       //   console.log('the galllery');
-       //   console.log(gallery);
           this._gallery.next(gallery);
 
           return gallery;
@@ -70,7 +67,7 @@ export class MediaService
 
   getGalleries(page: number = 0, size: number = 10, sort: string = 'name', order: 'asc' | 'desc' | '' = 'asc', search: string = ''):     Observable<{ pagination: GalleryPagination; galleries: Gallery[] }>
   {
-    return this._httpClient.get<{ pagination:  GalleryPagination; galleries: Gallery[] }>('http://127.0.0.1:3000/api/v1/gallery?primary=1', {
+    return this._httpClient.get<{ pagination:  GalleryPagination; galleries: Gallery[] }>(`${this._sharedService.apiLocation}/api/v1/gallery?primary=1`, {
       params: {
         page: '' + page,
         size: '' + size,
@@ -82,23 +79,6 @@ export class MediaService
       tap((response) => {
         this._pagination.next(response.pagination);
         this._galleries.next(response.galleries);
-      })
-    );
-  }
-
-  getGalleriesById(page: number = 0, size: number = 10, sort: string = 'name', order: 'asc' | 'desc' | '' = 'asc', search: string = ''):     Observable<{ pagination: GalleryPagination; gallery: Gallery }> {
-    return this._httpClient.get<{ pagination: GalleryPagination; gallery: Gallery }>('http://127.0.0.1:3000/api/v1/gallery?gallery_id=after-party', {
-      params: {
-        page: '' + page,
-        size: '' + size,
-        sort,
-        order,
-        search
-      }
-    }).pipe(
-      tap((response) => {
-    //    this._pagination.next(response.pagination);
-  //      this._galleries.next(response.gallery);
       })
     );
   }

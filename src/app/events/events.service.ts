@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, filter, map, Observable, of, switchMap, take, tap, throwError } from 'rxjs';
 import { Event, EventPagination } from './events.type';
+import {SharedService} from "../shared.service";
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export class EventsService
   /**
    * Constructor
    */
-  constructor(private _httpClient: HttpClient)
+  constructor(private _httpClient: HttpClient, private _sharedService: SharedService)
   {
   }
 
@@ -35,7 +36,7 @@ export class EventsService
 
   getEvents(page: number = 0, size: number = 10, sort: string = 'name', order: 'asc' | 'desc' | '' = 'asc', search: string = ''):     Observable<{ pagination: EventPagination; events: Event[] }>
   {
-    return this._httpClient.get<{ pagination: EventPagination; events: Event[] }>('https://g5ysgf59a8.execute-api.us-east-1.amazonaws.com/prod/api/v1/event', {
+    return this._httpClient.get<{ pagination: EventPagination; events: Event[] }>(`${this._sharedService.apiLocation}/api/v1/event`, {
       params: {
         page: '' + page,
         size: '' + size,

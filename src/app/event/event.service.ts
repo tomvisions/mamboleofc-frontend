@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, filter, map, Observable, of, switchMap, take, tap, throwError } from 'rxjs';
 import { Event, EventPagination } from './event.type';
+import {SharedService} from "../shared.service";
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class EventService
   /**
    * Constructor
    */
-  constructor(private _httpClient: HttpClient)
+  constructor(private _httpClient: HttpClient, private _sharedService : SharedService)
   {
   }
 
@@ -37,7 +38,7 @@ export class EventService
   {
     return this.event$.pipe(
       take(1),
-      switchMap(theContactUs => this._httpClient.get<Event>(`https://g5ysgf59a8.execute-api.us-east-1.amazonaws.com/prod/api/v1/event?slug=${slug}`,
+      switchMap(theContactUs => this._httpClient.get<Event>(`${this._sharedService.apiLocation}/api/v1/event?slug=${slug}`,
         { headers: {
             'Content-Type': 'application/json'
           }}).pipe(

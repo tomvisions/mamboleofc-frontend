@@ -21,7 +21,6 @@ import { EventComponent } from './event/event.component';
 import { MediaComponent } from './media/media.component';
 import { GalleryComponent } from './media/gallery.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
