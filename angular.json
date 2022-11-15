@@ -71,7 +71,7 @@
               ],
               "outputHashing": "all"
             },
-            "staging": {
+            "stage": {
               "budgets": [
                 {
                   "type": "initial",
