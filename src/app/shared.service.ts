@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {environment} from "../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -9,10 +10,9 @@ export class SharedService {
   constructor() {
 
     let options;
-    if (process.env['node_dev'] === 'dev') {
+    if (environment.node_env === 'dev') {
       this._apiLocation = 'http://127.0.0.1'
-//      options = {host: '127.0.0.1', dialect: 'mysql', port:3306}
-    } else if ( process.env['NODE_ENV'] === 'stage') {
+    } else if (environment.node_env === 'stage') {
       this._apiLocation = 'https://api-stage.mamboleofc.ca/'
     } else {
       this._apiLocation = 'https://api.mamboleofc.ca/';
