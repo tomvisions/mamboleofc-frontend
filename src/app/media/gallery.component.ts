@@ -1,17 +1,13 @@
 import { Component, OnInit, AfterViewInit, OnDestroy  } from '@angular/core';
 import { GalleryItem,ImageItem} from 'ng-gallery';
 import { MediaService } from "./media.service";
-import { Gallery, GetGallery, GalleryPagination} from "./media.type";
+import { Gallery, GalleryPagination} from "./media.type";
 import {Observable, Subject, takeUntil} from 'rxjs';
-import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.scss'],
- /*   template: `
-    <gallery [items]="images"></gallery>
-  ` */
 })
 
 export class GalleryComponent implements OnInit, AfterViewInit, OnDestroy {
@@ -25,7 +21,6 @@ export class GalleryComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor(
     private _mediaService:  MediaService,
-    private _router: Router
   ) { }
 
   ngOnDestroy() :void  {
