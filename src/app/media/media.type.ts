@@ -4,6 +4,7 @@ export interface Gallery {
   createdAt: Date;
   updatedAt: Date;
   images: Images[];
+  date: Date
 }
 
 export interface GetGallery {
