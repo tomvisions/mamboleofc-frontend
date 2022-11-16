@@ -3,7 +3,7 @@ import { GalleryItem,ImageItem} from 'ng-gallery';
 import { MediaService } from "./media.service";
 import { Gallery, GetGallery, GalleryPagination} from "./media.type";
 import {Observable, Subject, takeUntil} from 'rxjs';
-import {Event} from "../event/event.type";
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-gallery',
@@ -16,9 +16,8 @@ import {Event} from "../event/event.type";
 
 export class GalleryComponent implements OnInit, AfterViewInit, OnDestroy {
   images: GalleryItem[];
-  galleries: Observable<Gallery[]>;
   pagination: GalleryPagination;
-  gallery: Observable<Gallery>
+  gallery: Gallery
 
 
   private _unsubscribeAll: Subject<any> = new Subject<any>();
@@ -26,7 +25,7 @@ export class GalleryComponent implements OnInit, AfterViewInit, OnDestroy {
 
   constructor(
     private _mediaService:  MediaService,
-
+    private _router: Router
   ) { }
 
   ngOnDestroy() :void  {
@@ -38,7 +37,6 @@ export class GalleryComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit(): void {
-
     this.images = [];
     this._mediaService.gallery$
       .pipe(takeUntil(this._unsubscribeAll))
@@ -46,9 +44,7 @@ export class GalleryComponent implements OnInit, AfterViewInit, OnDestroy {
           for (let images of gallery.images) {
             this.images.push(new ImageItem({ src: `${images.file.original}`, thumb: `${images.file.small}` }));
           }
-
-        // Mark for check
-        //   this._changeDetectorRef.markForCheck();
+          this.gallery = gallery;
       });
   }
 

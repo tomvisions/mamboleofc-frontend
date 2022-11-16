@@ -38,8 +38,7 @@ export class MediaService
 
 
   getGalleryById(slug) : Observable<Gallery> {
-    console.log('the slug');
-    console.log(slug);
+
     return this.gallery$.pipe(
       take(1),
       switchMap(gallery => this._httpClient.get<GetGallery>(`${this._sharedService.apiLocation}/api/v1/gallery?gallery_id=${slug}`,
