@@ -32,11 +32,6 @@ export class MediaComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngAfterViewInit(): void {
-
-  }
-
-  ngOnInit(): void {
-
     this._mediaService.pagination$
       .pipe(takeUntil(this._unsubscribeAll))
       .subscribe((pagination: GalleryPagination) => {
@@ -44,10 +39,13 @@ export class MediaComponent implements OnInit, AfterViewInit, OnDestroy {
         // Update the pagination
         this.pagination = pagination;
 
-        // Mark for check
-     //   this._changeDetectorRef.markForCheck();
       });
     this.galleries$ = this._mediaService.galleries$;
+  }
+
+  ngOnInit(): void {
+
+
   }
 
   /**
