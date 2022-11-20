@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {EventsService} from "./events.service";
 import {Observable, Subject, takeUntil} from "rxjs";
 import {Event} from './events.type'
+import {ImageService} from "../image.service";
 
 @Component({
   selector: 'app-events',
@@ -12,11 +13,11 @@ export class EventsComponent implements OnInit {
   private _unsubscribeAll: Subject<any> = new Subject<any>();
   events: Event[];
   events$: Observable<Event[]>;
-
+  upcomingEventsHomeImage;
 
   constructor(
     private _eventService: EventsService,
-
+    private _imageService:ImageService
   ) { }
 
   ngAfterContentInit(): void {
@@ -31,6 +32,8 @@ export class EventsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.upcomingEventsHomeImage = this._imageService.loadImage1920x940('upcoming-events-home.jpg');
+
   }
 
   /**

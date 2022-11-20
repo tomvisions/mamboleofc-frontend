@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {ContactService} from "./contact.service";
+import {ImageService} from "../image.service";
 
 @Component({
   selector: 'app-contact',
@@ -10,16 +11,20 @@ import {ContactService} from "./contact.service";
 
 export class ContactComponent implements OnInit {
   selectedContactUsForm: FormGroup;
+  contactCoverImage;
 
   constructor(
     private _formBuilder: FormBuilder,
     private _contactUsService: ContactService,
+    private _imageService:ImageService
   ) {
     this.selectedContactUsForm = this._formBuilder.group({});
   }
 
 
   ngOnInit(): void {
+    this.contactCoverImage = this._imageService.loadImage1920x940('contact-us-hero2.jpg');
+
     // Create the selected product form
     this.selectedContactUsForm = this._formBuilder.group({
       name: '',
