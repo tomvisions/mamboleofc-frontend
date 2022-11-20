@@ -854,25 +854,25 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 /*-- Page Banner Area --*/
 .page-banner-area.home {
-  background-image: url('http://tomvisions-images.s3-website-us-east-1.amazonaws.com/1920x400/mamboleofc/mamboleofc-green.jpg');
+  background-image: url('https://tomvisions-images.s3-website-us-east-1.amazonaws.com/1920x400/mamboleofc/mamboleofc-green.jpg');
   z-index: inherit;
 }
 
 /*-- Page Banner Area --*/
 .page-banner-area.aboutus {
-  background-image: url('http://tomvisions-images.s3-website-us-east-1.amazonaws.com/1920x400/mamboleofc/who-we-are-home.jpg');
+  background-image: url('https://tomvisions-images.s3-website-us-east-1.amazonaws.com/1920x400/mamboleofc/who-we-are-home.jpg');
 }
 
 /*-- Page Banner Area --*/
 .page-banner-area.program {
-  background-image: url('http://tomvisions-images.s3-website-us-east-1.amazonaws.com/1920x400/mamboleofc/program.jpeg');
+  background-image: url('https://tomvisions-images.s3-website-us-east-1.amazonaws.com/1920x400/mamboleofc/program.jpeg');
 }
 .page-banner-area.upcoming-events {
-  background-image: url('http://tomvisions-images.s3-website-us-east-1.amazonaws.com/1920x400/mamboleofc/upcoming-events-home.jpg');
+  background-image: url('https://tomvisions-images.s3-website-us-east-1.amazonaws.com/1920x400/mamboleofc/upcoming-events-home.jpg');
 }
 
 .page-banner-area.contactus {
-  background-image: url('http://tomvisions-images.s3-website-us-east-1.amazonaws.com/1920x400/mamboleofc/contact-us-hero2.jpg');
+  background-image: url('https://tomvisions-images.s3-website-us-east-1.amazonaws.com/1920x400/mamboleofc/contact-us-hero2.jpg');
 }
 
 
