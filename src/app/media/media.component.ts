@@ -3,6 +3,7 @@ import { GalleryItem,ImageItem} from 'ng-gallery';
 import { MediaService } from "./media.service";
 import { Gallery, GalleryPagination} from "./media.type";
 import {Observable, Subject, takeUntil} from 'rxjs';
+import {ImageService} from "../image.service";
 
 @Component({
   selector: 'app-media',
@@ -17,14 +18,14 @@ export class MediaComponent implements OnInit, AfterViewInit, OnDestroy {
   images: GalleryItem[];
   galleries$: Observable<Gallery[]>;
   pagination: GalleryPagination;
-
+  mediaCoverImage;
 
   private _unsubscribeAll: Subject<any> = new Subject<any>();
 
 
   constructor(
     private _mediaService: MediaService,
-
+    private _imageService:ImageService
   ) { }
 
   ngOnDestroy() :void  {
@@ -44,7 +45,7 @@ export class MediaComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnInit(): void {
-
+    this.mediaCoverImage = this._imageService.loadImage1920x940('who-we-are-home.jpg');
 
   }
 
