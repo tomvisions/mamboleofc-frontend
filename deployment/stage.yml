@@ -9,7 +9,7 @@ phases:
     commands:
       - npm --version
       - echo Installing Angular CLI
-      - npm install --location=global @angular/cli gzip
+      - npm install --location=global @angular/cli
       - ng version
       - echo Installing Node Dependencies
       - npm install
