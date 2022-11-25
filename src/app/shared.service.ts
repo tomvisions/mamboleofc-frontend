@@ -11,7 +11,7 @@ export class SharedService {
     if (environment.node_env === 'dev') {
       this._apiLocation = 'http://127.0.0.1:3000'
     } else if (environment.node_env === 'stage') {
-      this._apiLocation = 'https://api-stage.mamboleofc.ca'
+        this._apiLocation = 'https://api-stage.mamboleofc.ca'
     } else {
       this._apiLocation = 'https://api.mamboleofc.ca';
     }
