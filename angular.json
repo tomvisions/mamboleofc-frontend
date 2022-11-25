@@ -111,6 +111,9 @@
             },
             "development": {
               "browserTarget": "mamboleofc-frontend:build:development"
+            },
+            "stage": {
+              "browserTarget": "mamboleofc-frontend:build:stage"
             }
           },
           "defaultConfiguration": "development",
