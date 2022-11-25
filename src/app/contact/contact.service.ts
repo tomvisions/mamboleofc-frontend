@@ -34,6 +34,9 @@ export class ContactService
 
   sendContactUs(contact: Contact): Observable<Contact>
   {
+    console.log('the info')
+    console.log(`${this._sharedService.apiLocation}/api/v1/mail`);
+    console.log(contact);
     return this.contactUs$.pipe(
       take(1),
       switchMap(theContactUs => this._httpClient.post<Contact>(`${this._sharedService.apiLocation}/api/v1/mail`,
