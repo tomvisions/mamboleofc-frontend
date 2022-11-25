@@ -34,6 +34,7 @@ export class ContactService
 
   sendContactUs(contact: Contact): Observable<Contact>
   {
+
     console.log('the info');
     console.log(`${this._sharedService.apiLocation}/api/v1/mail`);
     console.log(contact);
