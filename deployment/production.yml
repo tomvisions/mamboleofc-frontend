@@ -18,6 +18,10 @@ phases:
   build:
     commands:
       - ng build --configuration=production
+  post_build:
+    commands:
+      - aws s3 rm s3://www.mamboleofc.ca --recursive --quiet
+
 artifacts:
   files:
     - '**/*'
