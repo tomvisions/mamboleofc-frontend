@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {AbstractControl, FormBuilder, FormControl, FormGroup} from '@angular/forms';
 import {ContactService} from "./contact.service";
 import {ImageService} from "../image.service";
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contact',
@@ -16,13 +17,26 @@ export class ContactComponent implements OnInit {
   constructor(
     private _formBuilder: FormBuilder,
     private _contactUsService: ContactService,
-    private _imageService:ImageService
+    private _imageService:ImageService,
+    private _metaTagService: Meta
   ) {
     this.selectedContactUsForm = this._formBuilder.group({});
   }
 
 
   ngOnInit(): void {
+
+    this._metaTagService.addTags([
+      {
+        name: 'keywords',
+        content: 'Contact MamboleoFC, soccer training',
+      },
+      { name: 'robots', content: 'index, follow' },
+      { name: 'author', content: 'Tom Cruickshank' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'date', content: '2019-10-31', scheme: 'YYYY-MM-DD' },
+      { charset: 'UTF-8' },
+    ]);
     this.contactCoverImage = this._imageService.loadImage1920x940('contact-us-hero2.jpg');
 
     // Create the selected product form
