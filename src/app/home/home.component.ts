@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
     this._metaTagService.addTags([
       {
         name: 'keywords',
-        content: 'MamboleoFC, MamboleoFC website, soccer training, inclusive community',
+        content: 'MamboleoFC, MamboleoFC website, soccer training, inclusive community, soccer training indoors',
       },
       { name: 'robots', content: 'index, follow' },
       { name: 'author', content: 'Tom Cruickshank' },
