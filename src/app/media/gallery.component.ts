@@ -1,7 +1,7 @@
 import { Component, OnInit, AfterViewInit, OnDestroy  } from '@angular/core';
 import { GalleryItem,ImageItem} from 'ng-gallery';
 import { MediaService } from "./media.service";
-import { Gallery, GalleryPagination} from "./media.type";
+import { Gallery, OneGallery, GalleryPagination} from "./media.type";
 import {Observable, Subject, takeUntil} from 'rxjs';
 import {ImageService} from "../image.service";
 
@@ -14,7 +14,7 @@ import {ImageService} from "../image.service";
 export class GalleryComponent implements OnInit, AfterViewInit, OnDestroy {
   images: GalleryItem[];
   pagination: GalleryPagination;
-  gallery: Gallery
+  gallery: OneGallery
   mediaCoverImage;
 
   private _unsubscribeAll: Subject<any> = new Subject<any>();
@@ -38,7 +38,7 @@ export class GalleryComponent implements OnInit, AfterViewInit, OnDestroy {
     this.images = [];
     this._mediaService.gallery$
       .pipe(takeUntil(this._unsubscribeAll))
-      .subscribe((gallery: Gallery) => {
+      .subscribe((gallery: OneGallery) => {
           for (let images of gallery.images) {
             this.images.push(new ImageItem({ src: `${images.file.original}`, thumb: `${images.file.small}` }));
           }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {EventService} from "./event.service";
 import {Observable, Subject, takeUntil} from "rxjs";
 import {Event} from './event.type'
+import {ImageService} from "../image.service";
 
 @Component({
   selector: 'app-events',
@@ -12,9 +13,17 @@ export class EventComponent implements OnInit {
   private _unsubscribeAll: Subject<any> = new Subject<any>();
   eventInfo: Event;
   event$: Observable<Event>;
+  rightSideImagesArray: string[];
+  rightSideImageSResizedArray: string[];
+  bannerImage: string;
+  contentImage: string;
+  aboutImage: string;
+  content: string;
+  about: string;
 
   constructor(
     private _eventService: EventService,
+    private _imageService: ImageService
 
   ) { }
 
@@ -30,9 +39,22 @@ export class EventComponent implements OnInit {
       .subscribe((event: Event) => {
       //  this.event = 'hello';
       //  this.event = event;
-        //console.log(this.event);
+        //console.log(this.event);'
 
-        this.eventInfo = event['event'][0]['content'];
+        this._imageService.setSitePrefix(false);
+        this.bannerImage = this._imageService.loadImage1920x400(event.bannerImage);
+        this.contentImage = this._imageService.loadImage450x450(event.contentImage);
+        this.aboutImage = this._imageService.loadImage450x450(event.aboutImage);
+
+        this.content = event.content;
+        this.about = event.about;
+
+    //    this.rightSideImagesArray = event.rightSideImage;
+
+      //  for (let rightSideImage of this.rightSideImagesArray) {
+        //  this.rightSideImageSResizedArray.push(this._imageService.loadImage450x450(`event/${rightSideImage}`));
+      //  }
+       // this.eventInfo = event[0]['content'];
      //   console.log(eventInfo);
       });
 

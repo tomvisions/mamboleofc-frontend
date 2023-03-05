@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, filter, map, Observable, of, switchMap, take, tap, throwError } from 'rxjs';
-import { Event, EventPagination } from './event.type';
+import {Event, EventObject, EventPagination} from './event.type';
 import {SharedService} from "../shared.service";
 
 @Injectable({
@@ -36,17 +36,18 @@ export class EventService
 
   getEvent(slug): Observable<Event>
   {
+    console.log(`${this._sharedService.apiLocation}/api/v1/event?slug=${slug}`);
     return this.event$.pipe(
       take(1),
-      switchMap(theContactUs => this._httpClient.get<Event>(`${this._sharedService.apiLocation}/api/v1/event?slug=${slug}`,
+      switchMap(theContactUs => this._httpClient.get<EventObject>(`${this._sharedService.apiLocation}/api/v1/event?slug=${slug}`,
         { headers: {
             'Content-Type': 'application/json'
           }}).pipe(
-        map((event) => {
+        map((event:EventObject) => {
 
-          this._event.next(event);
+          this._event.next(event.event);
 
-          return event;
+          return event.event;
         }),
       ))
     );

@@ -46,6 +46,19 @@ export class ImageService {
     return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
   }
 
+  loadImage1920x400(image) {
+    const resizedImage = this.resizeWithInS3(image, {
+      "resize": {
+        "width": 1920,
+        "height": 400,
+        "fit": "cover"
+      }
+    });
+
+    return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
+  }
+
+
   loadImage450x450(image) {
     const resizedImage = this.resizeWithInS3(image, {
       "resize": {
@@ -103,13 +116,24 @@ export class ImageService {
    * @param edits
    */
   public resizeWithInS3(key: string, edits: EditProperties) {
+
+    if (this._PARAM_LOCATION) {
+      key = `${this._PARAM_LOCATION}/${key}`;
+    }
+
     const imageRequest = JSON.stringify({
       bucket: "tomvisions-original-images",
-      key: `${this._PARAM_LOCATION}/${key}`,
+      key: key,
       edits: edits
     })
 
     return `${Buffer.from(imageRequest).toString('base64')}`;
+  }
+
+  public setSitePrefix(prefix = true) {
+    if (!prefix) {
+      this._PARAM_LOCATION = null;
+    }
   }
 }
 

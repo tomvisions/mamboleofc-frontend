@@ -1,3 +1,7 @@
+export interface EventObject {
+  event:Event
+}
+
 export interface Event
 {
   id: string;
@@ -7,6 +11,11 @@ export interface Event
   date: Date;
   createdAt: Date;
   updatedAt: Date;
+  about: string;
+  bannerImage: string;
+  contentImage: string;
+  aboutImage: string;
+  rightSideImage: string[];
 }
 
 export interface EventPagination

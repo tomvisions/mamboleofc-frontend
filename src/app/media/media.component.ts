@@ -42,6 +42,7 @@ export class MediaComponent implements OnInit, AfterViewInit, OnDestroy {
 
       });
     this.galleries$ = this._mediaService.galleries$;
+    console.log(this.galleries$);
   }
 
   ngOnInit(): void {
