@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   partnerWithUsHomeImageMobile;
   followUsHomeImageMobile;
   charlesVideoScreenImage;
-
+  charlesVideoScreenImageMobile;
   constructor(private _imageService:ImageService, private _metaTagService: Meta) { }
 
   ngOnInit(): void {
@@ -34,6 +34,7 @@ export class HomeComponent implements OnInit {
     this.followUsHomeImageMobile = this._imageService.loadImage270x270('follow-us-home.jpg');
 
     this.charlesVideoScreenImage = this._imageService.loadImage1920x940('charles-video-screen.png');
+    this.charlesVideoScreenImageMobile = this._imageService.loadImage270x270('charles-video-screen.png');
 
 
     this._metaTagService.addTags([

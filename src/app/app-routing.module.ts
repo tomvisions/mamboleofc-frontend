@@ -13,6 +13,7 @@ import {MediaComponent} from "./media/media.component";
 import {GalleryComponent} from "./media/gallery.component";
 import {EventsResolver} from "./events/events.resolvers";
 import {EventResolver} from "./event/event.resolvers";
+import {PageResolver} from "./page.resolvers";
 import {EventComponent} from "./event/event.component";
 import {MediaResolver} from "./media/media.resolver";
 import {GalleryResolver} from "./media/gallery.resolver";
