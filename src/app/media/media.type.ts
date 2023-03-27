@@ -1,5 +1,5 @@
 export interface Gallery {
-  id: string;
+  slug: string;
   name: string;
   createdAt: Date;
   updatedAt: Date;
@@ -8,7 +8,7 @@ export interface Gallery {
 }
 
 export interface OneGallery {
-  id: string;
+  slug: string;
   name: string;
   createdAt: Date;
   updatedAt: Date;
@@ -27,7 +27,6 @@ export interface fileProperties {
 }
 export interface Image {
   file: fileProperties;
-  id: string;
   image_type:string;
   gallery_id:string;
   createdAt: Date;
@@ -36,7 +35,6 @@ export interface Image {
 
 export interface Images {
   file: fileProperties;
-  id: string;
   image_type:string;
   gallery_id:string;
   createdAt: Date;
