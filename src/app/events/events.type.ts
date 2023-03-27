@@ -7,6 +7,7 @@ export interface Event
   date: Date;
   createdAt: Date;
   updatedAt: Date;
+  intro: string;
 }
 
 export interface EventPagination

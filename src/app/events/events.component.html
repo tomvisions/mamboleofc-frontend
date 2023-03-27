@@ -46,18 +46,15 @@
         </p>
         <ng-container *ngIf="(events$ | async) as events">
           <ng-container *ngIf="events.length > 0; else noEvents">
-            <div class="row">
+            <div *ngFor="let event of events" class="row">
               <div class="about-image col-lg-2 col-12 pb-10 pt-10">
                 <img
                   src="http://tomvisions-images.s3-website-us-east-1.amazonaws.com/200x200/mamboleofc/omer-guilder-tournament.jpg"
                   width="150" alt="About MamboleFC">
               </div>
               <div class="about-image col-lg-10 col-12">
-                <p>
-                  <strong>Join us on Saturday, September 10, 2022 for the first annual Omer Gulder Memorial Charity
-                    Tournament. This is an event you won’t want to miss!</strong>
-                </p>
-                <a *ngFor="let event of events" href="/events/{{event.slug}}"><h4>Learn More</h4></a>
+                <p [innerHTML]="event.intro"></p>
+                <a href="/events/{{event.slug}}"><h4>Learn More</h4></a>
               </div>
             </div>
             <div class="about-image col-lg-12 col-12 pt-40">
