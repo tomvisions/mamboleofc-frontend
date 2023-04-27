@@ -15,6 +15,7 @@ export class EventComponent implements OnInit {
   event$: Observable<Event>;
   rightSideImagesArray: string[];
   rightSideImageSResizedArray: string[];
+  name: string;
   bannerImage: string;
   contentImage: string;
   aboutImage: string;
@@ -45,7 +46,7 @@ export class EventComponent implements OnInit {
         this.bannerImage = this._imageService.loadImage1920x400(event.bannerImage);
         this.contentImage = this._imageService.loadImage450x450(event.contentImage);
         this.aboutImage = this._imageService.loadImage450x450(event.aboutImage);
-
+        this.name = event.name
         this.content = event.content;
         this.about = event.about;
 
