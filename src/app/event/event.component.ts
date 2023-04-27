@@ -43,7 +43,7 @@ export class EventComponent implements OnInit {
         //console.log(this.event);'
 
         this._imageService.setSitePrefix(false);
-        this.bannerImage = this._imageService.loadImage1920x400(event.bannerImage);
+        this.bannerImage = this._imageService.loadImage1728x401(event.bannerImage);
         this.contentImage = this._imageService.loadImage450x450(event.contentImage);
         this.aboutImage = this._imageService.loadImage450x450(event.aboutImage);
         this.name = event.name
