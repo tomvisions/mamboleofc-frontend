@@ -64,7 +64,7 @@ export class ImageService {
       "resize": {
         "width": 450,
         "height": 450,
-        "fit": "cover"
+        "fit": "inside"
       }
     });
 
