@@ -51,7 +51,7 @@ export class ImageService {
       "resize": {
         "width": 1920,
         "height": 400,
-        "fit": "inside"
+        "fit": "outside"
       }
     });
 
