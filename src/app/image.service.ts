@@ -23,18 +23,6 @@ export class ImageService {
     return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
   }
 
-  loadImage1728x401(image) {
-    const resizedImage = this.resizeWithInS3(image, {
-      "resize": {
-        "width": 1728,
-        "height": 401,
-        "fit": "inside"
-      }
-    });
-
-    return `${this._PARAM_FRONTCLOUD}/${resizedImage}`;
-  }
-
   loadImage270x270(image) {
     const resizedImage = this.resizeWithInS3(image, {
       "resize": {
