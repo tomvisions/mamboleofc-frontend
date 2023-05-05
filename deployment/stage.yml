@@ -13,7 +13,7 @@ phases:
       - ng version
       - echo Installing Node Dependencies
       - npm install
-      - npm install --save @angular/material @angular/cdk
+      - npm install --save @angular/material @angular/cdk --legacy-peer-deps
   #      - npm install --save @angular/material @angular/cdk fs path ok
   build:
     commands:
