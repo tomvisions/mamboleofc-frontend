@@ -4859,3 +4859,23 @@ ul.values li {
   font-size: 16px;
   color: #727272;
 }
+
+
+/* -- SVG Overlay for play button on home screen video -- */
+.img-overlay-wrap {
+  position: relative;
+  display: inline-block; /* <= shrinks container to image size */
+  transition: transform 150ms ease-in-out;
+  text-align: center;
+}
+.img-overlay-wrap img { /* <= optional, for responsiveness */
+   display: block;
+   max-width: 100%;
+   height: auto;
+}
+
+.img-overlay-wrap svg {
+  position: absolute;
+  top: 65px;
+  left: 150px;
+}
