@@ -3,6 +3,7 @@ export interface Event
   id: string;
   name: string;
   content: string;
+  contentImage: string;
   slug: string;
   date: Date;
   createdAt: Date;

@@ -15,6 +15,7 @@ export class EventsComponent implements OnInit {
   events: Event[];
   events$: Observable<Event[]>;
   upcomingEventsHomeImage;
+  contentImage;
 
   constructor(
     private _eventService: EventsService,
@@ -30,11 +31,17 @@ export class EventsComponent implements OnInit {
       .pipe(takeUntil(this._unsubscribeAll))
       .subscribe((events: Event[]) => {
         this.events = events;
+
+        this._imageService.setSitePrefix(false)
+        this.contentImage = this._imageService.loadImage200x200(events[0].contentImage);
+
       });
   }
 
   ngOnInit(): void {
-    this.upcomingEventsHomeImage = this._imageService.loadImage1920x940('upcoming-events-home.jpg');
+    this._imageService.setSitePrefix(true)
+
+    this.upcomingEventsHomeImage = this._imageService.loadImage200x200('upcoming-events-home.jpg');
 
     this._metaTagService.addTags([
       {

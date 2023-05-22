@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, Resolve, Router, RouterStateSnapshot } from '@angular/router';
+import { ActivatedRouteSnapshot, Router, RouterStateSnapshot } from '@angular/router';
 import { catchError, Observable, throwError } from 'rxjs';
 import {EventsService} from "./events.service";
 import {Event, EventPagination} from './events.type'
@@ -7,7 +7,7 @@ import {Event, EventPagination} from './events.type'
 @Injectable({
     providedIn: 'root'
 })
-export class EventsResolver implements Resolve<any>
+export class EventsResolver 
 {
     /**
      * Constructor
