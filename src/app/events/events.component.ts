@@ -16,6 +16,7 @@ export class EventsComponent implements OnInit {
   events$: Observable<Event[]>;
   upcomingEventsHomeImage;
   contentImage;
+  pastEvents;
 
   constructor(
     private _eventService: EventsService,
@@ -26,15 +27,21 @@ export class EventsComponent implements OnInit {
   ngAfterContentInit(): void {
     this.events$ = this._eventService.events$;
 
+    const pastEvents = ['omer-2022.jpg', 'community-park-event.jpg', 'roots-and-culture-event.jpg', 'kick-off-party-event.jpg'];
+    this.pastEvents = [];
+    for (let pastEvent of pastEvents) {
+      this.pastEvents.push(this._imageService.loadImage270x270(pastEvent));
+    }
+    console.log('events here');
+    console.log(this.pastEvents);
     // Get the teams
     this._eventService.events$
       .pipe(takeUntil(this._unsubscribeAll))
       .subscribe((events: Event[]) => {
         this.events = events;
 
-        this._imageService.setSitePrefix(false)
+        this._imageService.setSitePrefix(false);
         this.contentImage = this._imageService.loadImage200x200(events[0].contentImage);
-
       });
   }
 

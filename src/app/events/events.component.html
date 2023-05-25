@@ -61,16 +61,10 @@
               <h3>Past Events</h3>
             </div>
             <div class="about-image col-12">
-              <div style="display: flex;justify-content: space-around">
-                <ul>
-                  <li>
-                    <img src="http://tomvisions-images.s3-website-us-east-1.amazonaws.com/380x450/mamboleofc/community-park-event.jpg">
-                  </li>
-                  <li>
-                    <img src="http://tomvisions-images.s3-website-us-east-1.amazonaws.com/350x450/mamboleofc/roots-and-culture-event.jpg">
-                  </li>
-                  <li>
-                    <img src="http://tomvisions-images.s3-website-us-east-1.amazonaws.com/350x450/mamboleofc/kick-off-party-event.jpg">
+              <div style="display: flex;justify-content: space-evenly">
+                <ul class="row"*ngFor="let past of pastEvents">
+                  <li class="col-lg-3 col-sm-12">
+                    <img src="{{past}}">
                   </li>
                 </ul>
               </div>
