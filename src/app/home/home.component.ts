@@ -23,12 +23,12 @@ export class HomeComponent implements OnInit {
   constructor(private _imageService:ImageService, private _metaTagService: Meta) { }
 
   ngOnInit(): void {
-    this.whoWeAreImageDesktop = this._imageService.loadImage1920x940('who-we-are-home-nov20.jpeg');
+    this.whoWeAreImageDesktop = this._imageService.loadImage1920x940('who-we-are-home-may25a.jpeg');
     this.upcomingEventsHomeImageDesktop = this._imageService.loadImage1920x940('upcoming-events-home.jpg');
     this.partnerWithUsHomeImageDesktop = this._imageService.loadImage1920x940('partner-with-us-home.jpg');
     this.followUsHomeImageDesktop = this._imageService.loadImage1920x940('follow-us-home.jpg');
 
-    this.whoWeAreImageMobile = this._imageService.loadImage270x270('who-we-are-home-nov20.jpeg');
+    this.whoWeAreImageMobile = this._imageService.loadImage270x270('who-we-are-home-may25a.jpeg');
     this.upcomingEventsHomeImageMobile = this._imageService.loadImage270x270('upcoming-events-home.jpg');
     this.partnerWithUsHomeImageMobile = this._imageService.loadImage270x270('partner-with-us-home.jpg');
     this.followUsHomeImageMobile = this._imageService.loadImage270x270('follow-us-home.jpg');
