@@ -4874,6 +4874,6 @@ ul.values li {
 
 .img-overlay-wrap svg {
   position: absolute;
-  top: 65px;
-  left: 150px;
+  top: 25%;
+  left: 40%;
 }
