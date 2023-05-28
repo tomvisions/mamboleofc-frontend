@@ -32,8 +32,7 @@ export class EventsComponent implements OnInit {
     for (let pastEvent of pastEvents) {
       this.pastEvents.push(this._imageService.loadImage270x270(pastEvent));
     }
-    console.log('events here');
-    console.log(this.pastEvents);
+
     // Get the teams
     this._eventService.events$
       .pipe(takeUntil(this._unsubscribeAll))
