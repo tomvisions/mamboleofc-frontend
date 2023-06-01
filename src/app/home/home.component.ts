@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit {
 
     //lightbox settings
     this.lightbox = GLightbox({
-      'href': 'https://tomvisions-images.s3.amazonaws.com/mamboleofc/mamboleo-fc.mp4',
+      'href': 'https://media.mamboleofc.ca/mamboleo-fc.mp4',
       'type': 'video',
       'source': 'local', //vimeo, youtube or local
       'width': 900,
