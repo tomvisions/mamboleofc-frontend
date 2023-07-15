@@ -1,26 +1,25 @@
 import {Component, OnInit} from '@angular/core';
-import {AbstractControl, FormBuilder, FormControl, FormGroup} from '@angular/forms';
-import {ContactService} from "./contact.service";
+import {FormBuilder, FormGroup} from "@angular/forms";
+import {RegistrationService} from "./registration.service";
 import {ImageService} from "../image.service";
-import { Title, Meta } from '@angular/platform-browser';
+import {Meta} from "@angular/platform-browser";
 
 @Component({
-  selector: 'app-contact',
-  templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  selector: 'app-registration',
+  templateUrl: './registration.component.html',
+  styleUrls: ['./registration.component.scss']
 })
-
-export class ContactComponent implements OnInit {
-  selectedContactUsForm: FormGroup;
+export class RegistrationComponent implements OnInit {
+  selectedRegistrationForm: FormGroup;
   contactCoverImage;
 
   constructor(
     private _formBuilder: FormBuilder,
-    private _contactUsService: ContactService,
+    private _registrationService: RegistrationService,
     private _imageService:ImageService,
     private _metaTagService: Meta
   ) {
-    this.selectedContactUsForm = this._formBuilder.group({});
+    this.selectedRegistrationForm = this._formBuilder.group({});
   }
 
 
@@ -29,7 +28,7 @@ export class ContactComponent implements OnInit {
     this._metaTagService.addTags([
       {
         name: 'keywords',
-        content: 'Contact MamboleoFC, soccer training',
+        content: 'Registration Form',
       },
       { name: 'robots', content: 'index, follow' },
       { name: 'author', content: 'Tom Cruickshank' },
@@ -40,22 +39,21 @@ export class ContactComponent implements OnInit {
     this.contactCoverImage = this._imageService.loadImage1920x940('contact-us-hero2.jpg');
 
     // Create the selected product form
-    this.selectedContactUsForm = this._formBuilder.group({
+    this.selectedRegistrationForm = this._formBuilder.group({
+      team_name: '',
       name: '',
       email: '',
-      phone: '',
-      subject: '',
-      body: '',
     });
   }
 
-  submitContact() {
+
+  submitRegistration() {
     // Get the product object
-    const contactUs = this.selectedContactUsForm.getRawValue();
-    contactUs['email_type'] = 'contact_us';
+    const registration = this.selectedRegistrationForm.getRawValue();
+    registration['email_type'] = 'tournament_registration';
     // Update the product on the server
-    this._contactUsService.sendContactUs(contactUs).subscribe((contact) => {
-      if (contact['result'] === 'success') {
+    this._registrationService.sendRegistration(registration).subscribe((register) => {
+      if (register['result'] === 'success') {
         document.querySelector('div.contact-form').classList.add('hide');
         document.querySelector('div.success').classList.remove('hide');
       } else {

@@ -20,6 +20,7 @@ import { TheFlamingoComponent } from './the-flamingo/the-flamingo.component';
 import { EventComponent } from './event/event.component';
 import { MediaComponent } from './media/media.component';
 import { GalleryComponent } from './media/gallery.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { GalleryComponent } from './media/gallery.component';
     TheFlamingoComponent,
     EventComponent,
     MediaComponent,
-    GalleryComponent
+    GalleryComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,

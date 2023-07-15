@@ -17,6 +17,7 @@ import {PageResolver} from "./page.resolvers";
 import {EventComponent} from "./event/event.component";
 import {MediaResolver} from "./media/media.resolver";
 import {GalleryResolver} from "./media/gallery.resolver";
+import {RegistrationComponent} from "./registration/registration.component";
 
 export const routes: Routes = [
   {
@@ -68,6 +69,13 @@ export const routes: Routes = [
   {
     path: 'events',
     component: EventsComponent,
+    resolve: {
+      events: EventsResolver,
+    },
+  },
+  {
+    path: 'registration',
+    component: RegistrationComponent,
     resolve: {
       events: EventsResolver,
     },
