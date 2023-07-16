@@ -12,7 +12,7 @@ import {Meta} from "@angular/platform-browser";
 export class RegistrationComponent implements OnInit {
   selectedRegistrationForm: FormGroup;
   contactCoverImage;
-
+  tournamentLogo;
   constructor(
     private _formBuilder: FormBuilder,
     private _registrationService: RegistrationService,
@@ -37,7 +37,7 @@ export class RegistrationComponent implements OnInit {
       { charset: 'UTF-8' },
     ]);
     this.contactCoverImage = this._imageService.loadImage1920x940('contact-us-hero2.jpg');
-
+    this.tournamentLogo = this._imageService.loadImage200x200('tournament-logo-2023.jpeg');
     // Create the selected product form
     this.selectedRegistrationForm = this._formBuilder.group({
       team_name: '',
