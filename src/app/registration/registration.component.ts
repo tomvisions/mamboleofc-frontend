@@ -11,7 +11,7 @@ import {Meta} from "@angular/platform-browser";
 })
 export class RegistrationComponent implements OnInit {
   selectedRegistrationForm: FormGroup;
-  contactCoverImage;
+  upcomingTournamentBanner;
   tournamentLogo;
   constructor(
     private _formBuilder: FormBuilder,
@@ -36,7 +36,9 @@ export class RegistrationComponent implements OnInit {
       { name: 'date', content: '2019-10-31', scheme: 'YYYY-MM-DD' },
       { charset: 'UTF-8' },
     ]);
-    this.contactCoverImage = this._imageService.loadImage1920x940('contact-us-hero2.jpg');
+ //   this.upcomingEventsHomeImage = this._imageService.loadImage200x200('upcoming-events-home.jpg');
+
+    this.upcomingTournamentBanner = this._imageService.loadImage1920x940('tournament-banner-2023.jpeg');
     this.tournamentLogo = this._imageService.loadImage200x200('tournament-logo-2023.jpeg');
     // Create the selected product form
     this.selectedRegistrationForm = this._formBuilder.group({
