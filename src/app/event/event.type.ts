@@ -15,6 +15,8 @@ export interface Event
   bannerImage: string;
   contentImage: string;
   aboutImage: string;
+  link: string;
+  linkName: string;
   rightSideImage: string[];
 }
 

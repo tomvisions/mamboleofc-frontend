@@ -21,7 +21,8 @@ export class EventComponent implements OnInit {
   aboutImage: string;
   content: string;
   about: string;
-
+  link: string;
+  linkName: string;
   constructor(
     private _eventService: EventService,
     private _imageService: ImageService
@@ -49,6 +50,8 @@ export class EventComponent implements OnInit {
         this.name = event.name
         this.content = event.content;
         this.about = event.about;
+        this.link = event.link;
+        this.linkName = event.linkName
 
     //    this.rightSideImagesArray = event.rightSideImage;
 

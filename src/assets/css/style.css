@@ -1679,6 +1679,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   color: #727272;
   line-height: 30px;
 }
+
 .about-content a {
   min-height: 43px;
   padding: 10px 34px;
@@ -1690,7 +1691,42 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-weight: 600;
   background-color: #4d4d4d;
 }
-.about-content a:hover {
+
+.event-content p {
+  font-size: 16px;
+  line-height: 26px;
+  color: #727272;
+  margin-bottom: 20px;
+}
+
+.event-content a {
+  padding: 10px 4px;
+  color: #0a53be;
+  font-weight: 900
+}
+
+.event-content a:hover {
+  color: #0a53be;
+}
+
+.link {
+  padding: 10px 50px;
+  display:block;
+}
+
+.link a {
+  min-height: 43px;
+  padding: 10px 34px;
+  line-height: 22px;
+  border-radius: 5px;
+  color: #ffffff;
+  font-family: Montserrat;
+  margin-top: 10px;
+  font-weight: 600;
+  background-color: #4d4d4d;
+}
+
+.link a:hover {
   background-color: #ffc61c;
 }
 
