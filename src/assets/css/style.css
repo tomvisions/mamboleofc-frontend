@@ -1029,7 +1029,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   right: 0;
   top: 0;
   z-index: 9999;
-  border-bottom: 1px solid #737373;
+  
 }
 @media only screen and (max-width: 767px) {
   .header-area {
@@ -1618,6 +1618,13 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   width: 100%;
 }
 
+/* Properly size images in Past Events carousel */
+
+.past-event {
+  height: 100%;
+  clip-path: content-box;
+}
+
 /*-- About Content --*/
 .about-content {
   padding-left: 42px;
@@ -1691,18 +1698,29 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   font-weight: 600;
   background-color: #4d4d4d;
 }
+.event-content {
+  padding-left: 0 !important;
+}
 
 .event-content p {
-  font-size: 16px;
+  font-size: 1em;
   line-height: 26px;
   color: #727272;
   margin-bottom: 20px;
 }
 
 .event-content a {
-  padding: 10px 4px;
-  color: #0a53be;
-  font-weight: 900
+  background: revert;
+  display: revert;
+  color: revert;
+  font-weight: 600;
+}
+.event-content a.row {
+  margin-left: 0 !important;
+}
+
+.event-content.link {
+  margin-bottom: 1.5em;
 }
 
 .event-content a:hover {
@@ -1732,7 +1750,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
 
 .about-content-no-block-link a {
   color: #0a53be;
-  font-family: Montserrat;
+  /* font-family: Montserrat; */
   font-weight: 600;
 }
 .about-content-no-block-link a:hover {
