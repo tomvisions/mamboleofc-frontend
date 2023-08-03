@@ -28,7 +28,7 @@ export class PageService {
     console.log(`${this._sharedService.apiLocation}/api/v1/page?slug=${slug}`);
     return this.page$.pipe(
       take(1),
-      switchMap(theContactUs => this._httpClient.get<PageObject>(`${this._sharedService.apiLocation}/api/v1/page?slug=${slug}`,
+      switchMap(theContactUs => this._httpClient.get<PageObject>(`${this._sharedService.apiLocation}/api/v1/page/slug/${slug}`,
         { headers: {
             'Content-Type': 'application/json'
           }}).pipe(
