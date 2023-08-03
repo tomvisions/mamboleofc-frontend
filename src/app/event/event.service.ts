@@ -39,7 +39,7 @@ export class EventService
     console.log(`${this._sharedService.apiLocation}/api/v1/event?slug=${slug}`);
     return this.event$.pipe(
       take(1),
-      switchMap(theContactUs => this._httpClient.get<EventObject>(`${this._sharedService.apiLocation}/api/v1/event?slug=${slug}`,
+      switchMap(theContactUs => this._httpClient.get<EventObject>(`${this._sharedService.apiLocation}/api/v1/event/slug/${slug}`,
         { headers: {
             'Content-Type': 'application/json'
           }}).pipe(
