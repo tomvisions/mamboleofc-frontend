@@ -7,7 +7,7 @@ const Buffer = require('buffer').Buffer;
 
 export class ImageService {
   private _PARAM_LOCATION = 'mamboleofc/site';
-  private _PARAM_FRONTCLOUD = 'https://d1rnutpibukanj.cloudfront.net';
+  private _PARAM_FRONTCLOUD = 'https://d34wc8uzk8vrsx.cloudfront.net';
 
   constructor() { }
 
