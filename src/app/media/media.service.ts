@@ -41,7 +41,7 @@ export class MediaService
 
     return this.gallery$.pipe(
       take(1),
-      switchMap(gallery => this._httpClient.get<GetGallery>(`${this._sharedService.apiLocation}/api/v1/gallery?gallery_slug=${slug}`,
+      switchMap(gallery => this._httpClient.get<GetGallery>(`${this._sharedService.apiLocation}/api/v1/gallery/slug/${slug}`,
         {
           headers: {
             'Content-Type': 'application/json'
@@ -65,7 +65,9 @@ export class MediaService
 
   getGalleries(page: number = 0, size: number = 10, sort: string = 'name', order: 'asc' | 'desc' | '' = 'asc', search: string = ''):     Observable<{ pagination: GalleryPagination; galleries: Gallery[] }>
   {
-    return this._httpClient.get<{ pagination:  GalleryPagination; galleries: Gallery[] }>(`${this._sharedService.apiLocation}/api/v1/gallery?primary=1`, {
+    console.log('pulling')
+    console.log(`${this._sharedService.apiLocation}/api/v1/gallery/primary`)
+    return this._httpClient.get<{ pagination:  GalleryPagination; galleries: Gallery[] }>(`${this._sharedService.apiLocation}/api/v1/gallery/primary`, {
       params: {
         page: '' + page,
         size: '' + size,
