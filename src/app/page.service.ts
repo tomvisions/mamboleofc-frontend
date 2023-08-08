@@ -25,7 +25,7 @@ export class PageService {
 
   getPage(slug): Observable<Page>
   {
-    console.log(`${this._sharedService.apiLocation}/api/v1/page?slug=${slug}`);
+    console.log(`${this._sharedService.apiLocation}/api/v1/page/slug/${slug}`);
     console.log('here');
     return this.page$.pipe(
       take(1),
