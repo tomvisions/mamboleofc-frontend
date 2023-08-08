@@ -36,7 +36,7 @@ export class EventService
 
   getEvent(slug): Observable<Event>
   {
-    console.log(`${this._sharedService.apiLocation}/api/v1/event?slug=${slug}`);
+    console.log(`${this._sharedService.apiLocation}/api/v1/event/slug=${slug}`);
     return this.event$.pipe(
       take(1),
       switchMap(theContactUs => this._httpClient.get<EventObject>(`${this._sharedService.apiLocation}/api/v1/event/slug/${slug}`,
