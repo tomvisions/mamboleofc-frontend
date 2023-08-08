@@ -41,6 +41,7 @@ export class GalleryComponent implements OnInit, AfterViewInit, OnDestroy {
       .subscribe((gallery: OneGallery) => {
           for (let images of gallery.images) {
             this.images.push(new ImageItem({ src: `${images.file.original}`, thumb: `${images.file.small}` }));
+            console.log(this.images);
           }
           this.gallery = gallery;
       });
