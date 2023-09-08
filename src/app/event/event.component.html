@@ -19,7 +19,10 @@
       </div>
       <!-- About Content -->
       <div class="col-lg-7 col-12">
-        <div class="event-content link col-lg-12 col-12" *ngIf="this.link && this.linkName">
+        <div class="event-content link col-lg-12 col-12 d-none d-lg-block" *ngIf="this.link && this.linkName">
+          <a class="row justify-content-center align-items-center" href="{{this.link}}">{{this.linkName}}</a>
+        </div>
+        <div class="event-content link col-lg-12 col-12 d-md-block d-lg-none" style="padding-top:2.5em;margin-bottom: 0px;" *ngIf="this.link && this.linkName">
           <a class="row justify-content-center align-items-center" href="{{this.link}}">{{this.linkName}}</a>
         </div>
 
