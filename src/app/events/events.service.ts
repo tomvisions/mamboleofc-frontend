@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, filter, map, Observable, of, switchMap, take, tap, throwError } from 'rxjs';
-import { Event, Gallery, EventPagination } from './events.type';
+import { Event, EventPagination } from './events.type';
 import {SharedService} from "../shared.service";
 
 @Injectable({
@@ -13,7 +13,6 @@ export class EventsService
   private _pagination: BehaviorSubject<EventPagination | null> = new BehaviorSubject(null);
   private _events: BehaviorSubject<Event[] | null> = new BehaviorSubject(null);
   private _event: BehaviorSubject<Event | null> = new BehaviorSubject(null);
-  private _galleries: BehaviorSubject<Gallery[] | null> = new BehaviorSubject(null);
 
   /**
    * Constructor
