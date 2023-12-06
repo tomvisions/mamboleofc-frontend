@@ -2,6 +2,8 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+        nodejs: latest
     commands:
       - git config --global credential.helper '!aws --region us-east-1 codecommit credential-helper $@'
       - git config --global credential.UseHttpPath true
@@ -20,7 +22,7 @@ phases:
       - ng build --configuration=stage
   post_build:
     commands:
-      - aws s3 rm s3://stage.mamboleofc.ca --recursive --quiet
+   #   - aws s3 rm s3://stage.mamboleofc.ca --recursive --quiet
 artifacts:
   files:
     - '**/*'
