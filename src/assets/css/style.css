@@ -4640,7 +4640,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   line-height: 24px;
   color: #444;
 }
-.contact-form form button.submit] {
+.contact-form form button.submit {
   margin: 0 1%;
   display: inline-block;
   border: 1px solid #ddd;
