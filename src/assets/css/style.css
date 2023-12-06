@@ -4640,7 +4640,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   line-height: 24px;
   color: #444;
 }
-.contact-form form button[type=submit] {
+.contact-form form button.submit] {
   margin: 0 1%;
   display: inline-block;
   border: 1px solid #ddd;
@@ -4651,7 +4651,7 @@ input:-ms-input-placeholder, textarea:-ms-input-placeholder {
   text-transform: uppercase;
   background-color: transparent;
 }
-.contact-form form button[type=submit]:hover {
+.contact-form form button.submit:hover {
   background-color: #ffc61c;
   border-color: #ffc61c;
   color: #ffffff;
