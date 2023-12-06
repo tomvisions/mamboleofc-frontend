@@ -39,78 +39,21 @@
 <div id="home-area" class="home-area section pb-60 pt-60 d-md-block d-lg-none">
   <div class="container">
 
+    <ng-container *ngIf="homeArray as slides">
 
-    <div class="row flex-column flex-lg-row-reverse">
+    <div *ngFor="let slide of slides"  class="row flex-column flex-lg-row-reverse">
       <!-- About Image -->
-      <h1><span>Welcome to our Soccer Club</span></h1>
+      <h1><span>{{slide.title}}</span></h1>
       <div class="about-image col-lg-5 col-12">
-        <img src="{{whoWeAreImageMobile}}" loading="lazy" alt="Welcome to our Soccer Club">
+        <img src="{{slide.imageMobile}}" loading="lazy" alt="Welcome to our Soccer Club">
       </div>
       <!-- About Content -->
       <div class="about-content about-content-2 col-lg-7 col-12">
-          <p>Mamboleo FC is a non-profit organization that brings together people from all walks of life through a shared love of the beautiful game of soccer. Our mission is to promote mental and physical health, community and culture through our soccer programs, events, fund-raising, and partnerships.</p>
-        <p><a href="/about">Read more</a></p>
+          <p>{{slide.message}}</p>
+        <p><a href="{{slide.link}}" class="{{slide.class}}">{{slide.clickMore}}</a></p>
       </div>
     </div>
-    <div class="row flex-column flex-lg-row-reverse">
-      <!-- About Image -->
-      <div class="about-image col-lg-5 col-12 pt-20">
-        <h3>Train with us</h3>
-        <div class="img-overlay-wrap">
-          <img src="{{charlesVideoScreenImageMobile}}" loading="lazy" class="image glightbox">
-          <a href="#" class="glightbox"><svg fill="#ffffff" height="80px" width="80px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 60 60" xml:space="preserve"><g> <path d="M45.563,29.174l-22-15c-0.307-0.208-0.703-0.231-1.031-0.058C22.205,14.289,22,14.629,22,15v30 c0,0.371,0.205,0.711,0.533,0.884C22.679,45.962,22.84,46,23,46c0.197,0,0.394-0.059,0.563-0.174l22-15 C45.836,30.64,46,30.331,46,30S45.836,29.36,45.563,29.174z M24,43.107V16.893L43.225,30L24,43.107z"></path> <path d="M30,0C13.458,0,0,13.458,0,30s13.458,30,30,30s30-13.458,30-30S46.542,0,30,0z M30,58C14.561,58,2,45.439,2,30 S14.561,2,30,2s28,12.561,28,28S45.439,58,30,58z"></path> </g> </svg>
-          </a></div>
-      </div>
-      <!-- About Content -->
-      <div class="about-content about-content-2 col-lg-7 col-12">
-      </div>
-    </div>
-
-    <div class="row flex-column flex-lg-row-reverse">
-      <!-- About Image -->
-      <div class="about-image col-lg-5 col-12 pt-20">
-        <h3>Upcoming Events</h3>
-        <img src="{{upcomingEventsHomeImageMobile}}"  loading="lazy" alt="Upcoming Events">
-      </div>
-      <!-- About Content -->
-      <div class="about-content about-content-2 col-lg-7 col-12">
-        <p>
-          Registration is now closed for the 2023 OG Charity Soccer Tournament. We'll see you all there!
-        <p><a href="/events/og-charity-soccer-tournament">Learn more</a></p>
-      </div>
-    </div>
-    <div class="row flex-column flex-lg-row-reverse">
-      <!-- About Image -->
-      <div class="about-image col-lg-5 col-12 pt-20">
-        <h3>Partner With Us</h3>
-        <img src="{{partnerWithUsHomeImageMobile}}" loading="lazy" alt="Partner With Us">
-      </div>
-      <!-- About Content -->
-      <div class="about-content about-content-2 col-lg-7 col-12">
-        <p>
-          Mamboleo FC is dedicated to fostering connection and community through social events promoting sport,
-          fitness, nature music and the arts. We partner with local businesses, organizations and artists to bring
-          unique events to the Ottawa community, our members and friends.</p>
-        <p><a href="/contact">Partner with us</a></p>
-      </div>
-    </div>
-    <div class="row flex-column flex-lg-row-reverse">
-      <!-- About Image -->
-      <div class="about-image col-lg-5 col-12 pt-20">
-        <h3>Follow Us</h3>
-        <img src="{{followUsHomeImageMobile}}" loading="lazy" alt="Follow Us">
-      </div>
-      <!-- About Content -->
-      <div class="about-content about-content-2 col-lg-7 col-12">
-
-        <p>
-          Join our social network for the latest news and events!!
-        </p>
-        <p>
-          <a href="/contact">Get Social</a>
-        </p>
-      </div>
-    </div>
-  </div>
+    </ng-container>
+</div>
 </div>
 <!-- About Area End -->
