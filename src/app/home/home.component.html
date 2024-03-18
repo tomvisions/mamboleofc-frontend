@@ -2,11 +2,14 @@
 <div id="hero-area" class="hero-area section d-none d-lg-block">
    <!-- Hero Slider Start -->
    <div class="hero-slider">
-    <ng-container *ngIf="homeArray as slides">
+
     <!-- Single Hero Item -->
-    <div *ngFor="let slide of slides" class="hero-item ">
+
+    <div class="hero-item" *ngFor="let slide of slides">
       <!-- Hero Slider Image -->
-      <img src="{{slide.imageDesktop}}" loading="lazy" alt="Welcome to our Soccer Club">
+      <div class="{{slide.class}}">
+        <img src="{{slide.imageDesktop}}" loading="lazy" alt="Welcome to our Soccer Club">
+      </div>
       <div class="container">
         <div class="row">
           <!-- Hero Slider Content -->
@@ -18,7 +21,6 @@
         </div>
       </div>
     </div>
-    </ng-container>
   </div>
 </div>
 
@@ -39,8 +41,6 @@
 <div id="home-area" class="home-area section pb-60 pt-60 d-md-block d-lg-none">
   <div class="container">
 
-    <ng-container *ngIf="homeArray as slides">
-
     <div *ngFor="let slide of slides"  class="row flex-column flex-lg-row-reverse">
       <!-- About Image -->
       <h1><span>{{slide.title}}</span></h1>
@@ -53,7 +53,6 @@
         <p><a href="{{slide.link}}" class="{{slide.class}}">{{slide.clickMore}}</a></p>
       </div>
     </div>
-    </ng-container>
 </div>
 </div>
 <!-- About Area End -->

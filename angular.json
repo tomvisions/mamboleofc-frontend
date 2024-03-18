@@ -36,8 +36,7 @@
               "src/assets/css/material-design-iconic-font.min.css",
               "src/assets/css/font-awesome.min.css",
               "src/assets/css/plugins.css",
-              "src/assets/css/style.css",
-              "node_modules/glightbox/dist/css/glightbox.css"
+              "src/assets/css/style.css"
             ],
             "scripts": [
               "src/assets/js/vendor/modernizr-2.8.3.min.js",
@@ -45,8 +44,7 @@
               "src/assets/js/bootstrap.bundle.min.js",
               "src/assets/js/plugins.js",
               "src/assets/js/ajax-mail.js",
-              "src/assets/js/site.js",
-              "node_modules/glightbox/dist/js/glightbox.js"
+              "src/assets/js/site.js"
             ]
           },
           "configurations": {

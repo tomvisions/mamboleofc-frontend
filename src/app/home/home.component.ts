@@ -1,24 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, AfterViewInit } from '@angular/core';
 import GLightbox from 'glightbox';
 import {ImageService} from "../image.service";
-import { Title, Meta } from '@angular/platform-browser';
-import { Observable } from 'rxjs';
-import { Slide } from './home.type';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, AfterViewInit {
   lightbox:any;
-  homeArray;
+  slides:any;
   constructor(private _imageService:ImageService, private _metaTagService: Meta) { }
 
   ngOnInit(): void {
-
-
-    this.homeArray = [
+    this.slides = [
       { // who we are
         imageDesktop: this._imageService.loadImage1920x940('who-we-are-home-nov20.jpeg'),
         imageMobile: this._imageService.loadImage270x270('who-we-are-home-nov20.jpeg'),
@@ -88,16 +85,18 @@ export class HomeComponent implements OnInit {
       { name: 'date', content: '2019-10-31', scheme: 'YYYY-MM-DD' },
       { charset: 'UTF-8' },
     ]);
+  }
 
-
-    //lightbox settings
-    this.lightbox = GLightbox({
+  ngAfterViewInit(): void {
+    GLightbox({
       'href': 'https://media.mamboleofc.ca/mamboleo-fc.mp4',
       'type': 'video',
       'source': 'local', //vimeo, youtube or local
       'width': 900,
       'autoplayVideos': true,
+      onOpen: () => {
+        console.log('Lightbox opened')
+      },
     });
   }
-
 }
