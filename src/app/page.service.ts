@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, map, Observable, switchMap, take, tap} from "rxjs";
 import {Page, PageObject} from "./page.type";
-import {HttpClient} from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import {SharedService} from "./shared.service";
 
 @Injectable({
